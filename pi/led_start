@@ -1,0 +1,2 @@
+#!/bin/bash
+nohup /root/cat_ear/pi/led > /dev/null &

@@ -30,7 +30,7 @@ void init_led_pins(){
 struct timespec sleeper, sleeper2, dummy ;
 
 void print_led(int mrx[]) {
-    int i,j,t;
+    int i,j,t,j_;
     for (j=0;j<16;j++){
         t = mrx[j];
         digitalWrite(P_LAT,0);
@@ -42,10 +42,11 @@ void print_led(int mrx[]) {
             t >>= 1;
         }
         digitalWrite(P_OE,1);
-        digitalWrite(ADDR_A,j & 0x1);
-        digitalWrite(ADDR_B,j & 0x2);
-        digitalWrite(ADDR_C,j & 0x4);
-        digitalWrite(ADDR_D,j & 0x8);
+        j_ = 15 - j;
+        digitalWrite(ADDR_A,j_ & 0x1);
+        digitalWrite(ADDR_B,j_ & 0x2);
+        digitalWrite(ADDR_C,j_ & 0x4);
+        digitalWrite(ADDR_D,j_ & 0x8);
         
         digitalWrite(P_LAT,1);
         digitalWrite(P_OE,0);
@@ -156,6 +157,7 @@ int gra2[] = {
 int cry[] = {
 0b0000000000000000,
 0b0000000000000000,
+0b0000000000000000,
 0b0000100001110000,
 0b0000010001110000,
 0b0000001001110000,
@@ -169,12 +171,10 @@ int cry[] = {
 0b0000100001110000,
 0b0000000000000000,
 0b0000000000000000,
-0b0000000000000000,
 0b0000000000000000
 };
 
 int right[] = {
-0b0000000000000000,
 0b0000000000000000,
 0b0000000000000000,
 0b0000000000000000,
@@ -190,6 +190,7 @@ int right[] = {
 0b0000000000100000,
 0b0000000000000000,
 0b0000000000000000,
+0b0000000000000000,
 0b0000000000000000
 };
 
@@ -197,16 +198,15 @@ int stop[] = {
 0b0000000000000000,
 0b0000000000000000,
 0b0000000000000000,
-0b0000011111110000,
-0b0000011111110000,
+0b0000000000000000,
+0b0000111111110000,
+0b0000111111110000,
 0b0000000000000000,
 0b0000000000000000,
 0b0000000000000000,
-
-0b0000011111110000,
-0b0000011111110000,
 0b0000000000000000,
-0b0000000000000000,
+0b0000111111110000,
+0b0000111111110000,
 0b0000000000000000,
 0b0000000000000000,
 0b0000000000000000,
@@ -237,7 +237,7 @@ void print_loading(int n) {
   int i,j_,t;
   j_ = n % 18;
   
-  t = j_ <= 15 ? 0x7F0 : 0x0;
+  t = j_ <= 15 ? 0x7E0 : 0x0;
   digitalWrite(P_LAT,0);
   digitalWrite(P_CLK,0);
   for (i=0;i<16;i++) {
@@ -247,6 +247,7 @@ void print_loading(int n) {
       t >>= 1;
   }
   digitalWrite(P_OE,1);
+  j_ = 15 - j_;
   digitalWrite(ADDR_A,j_ & 0x1);
   digitalWrite(ADDR_B,j_ & 0x2);
   digitalWrite(ADDR_C,j_ & 0x4);
@@ -339,7 +340,7 @@ int numbers[][4] = {
 };
 
 void print_time(int n){
-  int i,j,t;
+  int i,j,t,j_;
   if (n < 0) n = 0;
   int a = n / 60;
   int b = (n % 60) / 10;
@@ -368,10 +369,11 @@ void print_time(int n){
           t >>= 1;
       }
       digitalWrite(P_OE,1);
-      digitalWrite(ADDR_A,j & 0x1);
-      digitalWrite(ADDR_B,j & 0x2);
-      digitalWrite(ADDR_C,j & 0x4);
-      digitalWrite(ADDR_D,j & 0x8);
+      j_ = 15 - j;
+      digitalWrite(ADDR_A,j_ & 0x1);
+      digitalWrite(ADDR_B,j_ & 0x2);
+      digitalWrite(ADDR_C,j_ & 0x4);
+      digitalWrite(ADDR_D,j_ & 0x8);
       
       digitalWrite(P_LAT,1);
       digitalWrite(P_OE,0);
