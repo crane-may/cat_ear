@@ -1,9 +1,10 @@
-# 44  sudo apt-get install gstreamer0.10-alsa 
-# 45  sudo apt-get install gstreamer0.10-nice 
-# 49  sudo apt-get install python-gst0.10-dev
-# 52  sudo apt-get install gstreamer0.10-fluendo-mp3 
-# 53  sudo apt-get install gstreamer0.10-good
-# 54  sudo apt-get install gstreamer0.10-plugins-good
+# sudo apt-get install alsa
+# sudo apt-get install gstreamer0.10-alsa 
+# sudo apt-get install gstreamer0.10-nice 
+# sudo apt-get install python-gst0.10-dev
+# sudo apt-get install gstreamer0.10-good
+# sudo apt-get install gstreamer0.10-plugins-good
+# sudo apt-get install gstreamer0.10-plugins-ugly
 # sudo apt-get install python-gobject
 # sudo apt-get install python-gst0.10-dev
 
@@ -15,21 +16,30 @@ import gst
 
 class CLI_Main:
     def __init__(self):
-        self.player = gst.element_factory_make("playbin2", "player")
+        self.play_list = []
+        self.player = gst.Pipeline("player")
+        source = gst.element_factory_make("souphttpsrc", "http-source")
+        decoder = gst.element_factory_make("mad", "mp3-decoder")
+        conv = gst.element_factory_make("audioconvert", "converter")
+        sink = gst.element_factory_make("alsasink", "alsa-output")
+        
+        self.player.add(source, decoder, conv, sink)
+        gst.element_link_many(source, decoder, conv, sink)
+
         bus = self.player.get_bus()
         bus.add_signal_watch()
         bus.connect("message", self.on_message)
-        self.play_list = []
     
     def play(self,uri):
         self.player.set_state(gst.STATE_NULL)
-        self.player.set_property("uri", uri)
+        self.player.get_by_name("http-source").set_property("location", uri)
         self.player.set_state(gst.STATE_PLAYING)
         self.is_playing = True
         while self.is_playing:
             time.sleep(1)
     
     def on_message(self, bus, message):
+        print message
         t = message.type
         if t == gst.MESSAGE_EOS:
             self.player.set_state(gst.STATE_NULL)
@@ -54,9 +64,11 @@ class CLI_Main:
         while True:
             if len(self.play_list) == 0:
                 self.fetch_playlist()
-            
-            self.play(self.play_list.pop()["url"])
-        
+            sng = self.play_list.pop()
+            print "play ===",sng
+            self.play(sng["url"])
+        # self.play("file:///home/pi/p1877389.mp3")
+        #self.play("http://mr4.douban.com/201301160214/c910d6687e042d6a7edffb2d3ff0c27c/view/song/small/p1028605_192k.mp3")
         time.sleep(1)
         loop.quit()
 
