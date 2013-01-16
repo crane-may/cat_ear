@@ -37,6 +37,21 @@ class CLI_Main:
         self.is_playing = True
         while self.is_playing:
             time.sleep(1)
+            try:
+                print "%s / %s"%(
+                    self.convert_ns(self.player.query_position(gst.FORMAT_TIME, None)[0]),
+                    # self.convert_ns(self.player.query_duration(gst.FORMAT_TIME, None)[0])
+                    self.convert_s(self.cur_song['length'])
+                )
+            except Exception, e:
+                print "00:00 / 00:00"
+    
+    def convert_ns(self, t):
+		return self.convert_s(divmod(t, 1000000000)[0])
+    
+    def convert_s(self, t):
+		m,s = divmod(t, 60)
+		return "%02i:%02i" %(m,s)
     
     def on_message(self, bus, message):
         print message
@@ -64,11 +79,9 @@ class CLI_Main:
         while True:
             if len(self.play_list) == 0:
                 self.fetch_playlist()
-            sng = self.play_list.pop()
-            print "play ===",sng
-            self.play(sng["url"])
-        # self.play("file:///home/pi/p1877389.mp3")
-        #self.play("http://mr4.douban.com/201301160214/c910d6687e042d6a7edffb2d3ff0c27c/view/song/small/p1028605_192k.mp3")
+            self.cur_song = self.play_list.pop()
+            print "play ===",self.cur_song
+            self.play(self.cur_song["url"])
         time.sleep(1)
         loop.quit()
 
