@@ -1,0 +1,84 @@
+=====================================================
+              +-------------------------+
+              |  Brain(Control Server)  |
+              +-------------------------+
+                    ^            ^
+         brain-eye  |            |
+         interface  |            |
+                    v            | brain-mouth
+ +-------------------------+     | interface
+ |  Eye(Browser Frontend)  |     |
+ +-------------------------+     v
+                             +---------------------+
+                             |    Mouth(Device)    |
+                             +---------------------+
+------------------------------------------------------
+Brain:
+    Brain is web server, support Eye & Mouth with http
+    interface.
+
+Eye:
+    Brain's view.
+
+Mouth:
+    Device with mcu, wifi and speak
+=====================================================
+
+
+=====================================================
+Models
+-----------------------------------------------------
+         +-------+              +--------+
+         | user  |   n      n   | device |
+         +-------+  ----------  +--------+
+         | name  |              | attrs  |
+         | pwd   |              | ...    |
+         +-------+              +--------+
+=====================================================
+
+
+=====================================================
+brain-eye interface:
+-----------------------------------------------------
+login (page)
+    content:
+        login_form
+        
+login (post)
+    params:
+        user_name
+        password
+
+devices_list (page)
+    content:
+        list of devices
+        
+devices_pair (page)
+    content:
+        pair_key
+    
+devices_show (page)
+    content:
+        attrs of device
+        
+devices_update_attr (post)
+    params:
+        key & value of attrs
+=====================================================
+
+
+=====================================================
+brain-mouth interface:
+-----------------------------------------------------
+create_pair (post)
+    params:
+        pair_key
+        
+update_attrs (post)
+    params:
+        key & value of attrs
+        
+get_attrs (json)
+    content:
+        key & value of attrs
+=====================================================
