@@ -29,8 +29,9 @@ Mouth:
 Models
 -----------------------------------------------------
          +-------+              +--------+
-         | user  |   n      n   | device |
+         | USER  |   n      n   | DEVICE |
          +-------+  ----------  +--------+
+		 | id    |              | id     |
          | name  |              | attrs  |
          | pwd   |              | ...    |
          +-------+              +--------+
@@ -41,29 +42,37 @@ Models
 brain-eye interface:
 -----------------------------------------------------
 login (page)
-    content:
-        login_form
+    url:
+        /login
         
 login (post)
+    url:
+        /users
     params:
-        user_name
-        password
+        user[name]
+        user[password]
 
 devices_list (page)
+    url:
+        /devices/list
     content:
-        list of devices
+        @devices (list of DEVICE)
         
 devices_pair (page)
+    url:
+        /devices/pair
     content:
-        pair_key
+        @pair_id
     
 devices_show (page)
+    url:
+        /devices/show/{devices_id}
     content:
-        attrs of device
+        @device
         
 devices_update_attr (post)
     params:
-        key & value of attrs
+        attrs (hash, json in http body)
 =====================================================
 
 
@@ -71,14 +80,20 @@ devices_update_attr (post)
 brain-mouth interface:
 -----------------------------------------------------
 create_pair (post)
+    url:
+        /devices/create_pair/{devices_id}
     params:
         pair_key
         
 update_attrs (post)
+    url:
+        /devices/update_attr/{devices_id}
     params:
-        key & value of attrs
+        attrs (hash, json in http body)
         
 get_attrs (json)
+    url:
+        /devices/get_attr/{devices_id}
     content:
-        key & value of attrs
+        attrs (hash, json)
 =====================================================
