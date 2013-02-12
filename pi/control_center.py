@@ -1,84 +1,113 @@
 import subprocess,os,re,urllib2,json
-#import fcntl, socket, struct
-import time
+import fcntl, socket, struct
+import time, thread
 
 # ==== Control ====
-#        		type		default
-# playing 		bool		True
-# volume		int			30
-# channel		string		{"url":"http://douban.fm/j/mine/playlist","Headers":{}}
-# next			toggle		False
-# like			toggle		False
-# unlike		toggle		False
+#               type        default
+# playing       bool        True
+# volume        int         0.005
+# channel       string      {"url":"http://douban.fm/j/mine/playlist","headers":{}}
+# next          bool        False
+# like          bool        False
+# unlike        bool        False
 
 # ==== Status ====
-# douban		string
+# douban        string
 
 store = {}
+store_last = {}
 store_dirty = set([])
 store_default = {
-	"playing"	: True,
-	"volume"	: 30,
-	"channel"	: '{"url":"http://douban.fm/j/mine/playlist","Headers":{}}',
-	"next"		: False,
-	"like"		: False,
-	"unlike"	: False
+    "playing"   : True,
+    "volume"    : 0.005,
+    "channel"   : '{"url":"http://douban.fm/j/mine/playlist","headers":{}}',
+    "next"      : False,
+    "like"      : False,
+    "unlike"    : False
 }
 
+did = None
 def get_did():
-	# s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    # info = fcntl.ioctl(s.fileno(), 0x8927,  struct.pack('256s', "eth0"[:15]))
-    # did = "did_"+''.join(['%02x' % ord(char) for char in info[18:24]])
-	did = "did_b827ebaba73a"
-	return did	
+    global did
+    if did == None:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        info = fcntl.ioctl(s.fileno(), 0x8927,  struct.pack('256s', "eth0"[:15]))
+        did = "did_"+''.join(['%02x' % ord(char) for char in info[18:24]])
+    #did = "did_b827ebaba73a"
+    return did  
 
 def ccsync():
-	global store
-	global store_dirty
-	store_set = {}
-	
-	if len(store_dirty) > 0:
-		for dk in store_dirty:
-			store_set[dk] = store[dk]
-		store_dirty = set([])
-		
-		request = urllib2.Request("http://radio.miaocc.com/devices/update_attr/%s"%get_did())
-		request.add_header('User-Agent', 'Mozilla/5.0 (pi)')
-		request.add_header('Accept-Encoding','deflate')
-		request.add_header('Accept','application/json')
-		request.add_header('Connection','close')
-		
-		response = urllib2.urlopen(request,json.dumps(store_set))
-		print response.read()
+    global store
+    global store_dirty
+    store_set = {}
+    
+    if len(store_dirty) > 0:
+        for dk in store_dirty:
+            store_set[dk] = store[dk]
+        store_dirty = set([])
+        
+        request = urllib2.Request("http://radio.miaocc.com/devices/update_attr/%s"%get_did())
+        request.add_header('User-Agent', 'Mozilla/5.0 (pi)')
+        request.add_header('Accept-Encoding','deflate')
+        request.add_header('Accept','application/json')
+        request.add_header('Connection','close')
+        
+        response = urllib2.urlopen(request,json.dumps(store_set))
+        print response.read()
 
-	request = urllib2.Request("http://radio.miaocc.com/devices/get_attr/%s"%get_did())
-	request.add_header('User-Agent', 'Mozilla/5.0 (pi)')
-	request.add_header('Accept-Encoding','deflate')
-	request.add_header('Accept','application/json')
-	request.add_header('Connection','close')
-	
-	response = urllib2.urlopen(request)
-	ret = response.read()
-	print ret
-	
-	store = json.loads(ret)
+    request = urllib2.Request("http://radio.miaocc.com/devices/get_attr/%s"%get_did())
+    request.add_header('User-Agent', 'Mozilla/5.0 (pi)')
+    request.add_header('Accept-Encoding','deflate')
+    request.add_header('Accept','application/json')
+    request.add_header('Connection','close')
+    
+    response = urllib2.urlopen(request)
+    ret = response.read()
+    print ret
+    
+    store = json.loads(ret)
 
-	
+    
 def ccget(key):
-	if store.has_key(key):
-		return store[key]
-	elif store_default.has_key(key):
-		return store_default[key]
-	else:
-		return None
+    if store.has_key(key):
+        return store[key]
+    elif store_default.has_key(key):
+        return store_default[key]
+    else:
+        return None
 
+def ccchange(key):
+    global store_last
+    if store_last.has_key(key) and ccget(key) != store_last[key] or not store_last.has_key(key):
+        store_last[key] = ccget(key)
+        return True
+    else:
+        store_last[key] = ccget(key)
+        return False
+    
 def ccset(key,v):
-	store_dirty.add(key)
-	store[key] = v
-	ccsync()
+    store_dirty.add(key)
+    store[key] = v
+    ccsync()
+
+	
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(15, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+def controller():
+    last = True
+    while True:
+        cur = GPIO.input(15)
+        if cur and not last:
+            ccset("playing",not ccget("playing"))
+            
+        time.sleep(0.1)
+        last = cur
+        
+thread.start_new_thread(controller, ())
 
 if __name__ == "__main__" :
-	print ccget("playing")
-	ccset("playing",False)
-	print ccget("playing")
-	
+	while True:
+		print ccget("playing")
+		time.sleep(1)

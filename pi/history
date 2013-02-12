@@ -1,0 +1,1000 @@
+  650  gcc -lwiringPi -o led led.c
+  651  sudo ./led &
+  652  fg
+  653  gcc -lwiringPi -o led led.c
+  654  sudo ./led &
+  655  top
+  656  fg
+  657  gcc -lwiringPi -o led led.c
+  658  sudo ./led &
+  659  fg
+  660  gcc -lwiringPi -o led led.c
+  661  sudo ./led &
+  662  fg
+  663  sudo ./led &
+  664  fg
+  665  gcc -lwiringPi -o led led.c
+  666  sudo ./led &
+  667  fg
+  668  gcc -lwiringPi -o led led.c
+  669  sudo ./led
+  670  gcc -lwiringPi -o led led.c
+  671  sudo ./led
+  672  gcc -lwiringPi -o led led.c
+  673  sudo ./led
+  674  gcc -lwiringPi -o led led.c
+  675  sudo ./led
+  676  gcc -lwiringPi -o led led.c
+  677  sudo ./led
+  678  gcc -lwiringPi -o led led.c
+  679  sudo ./led
+  680  gcc -lwiringPi -o led led.c
+  681  sudo ./led
+  682  sudo init 0
+  683  ls
+  684  lsusb 
+  685  cd cat_ear/pi/
+  686  ls
+  687  sudo ./led 
+  688  cd ..
+  689  svn co https://mjpg-streamer.svn.sourceforge.net/svnroot/mjpg-streamer mjpg-streamer
+  690  sudo apt-get install mplayer
+  691  mplayer -vo png -frames 1 tv://
+  692  ls
+  693  sudo mplayer -vo png -frames 1 tv://
+  694  sudo apt-get install fswebcam 
+  695  fswebcam -r 640x480 --jpeg 85 -D 1 web-cam-shot.jpg
+  696  python -m SimpleHTTPServer
+  697  fswebcam -r 640x480 --jpeg 85 -D 1 web-cam-shot.jpg
+  698  python -m SimpleHTTPServer
+  699  python -m SimpleHTTPServer &
+  700  fswebcam -r 640x480 --jpeg 85 -D 1 web-cam-shot.jpg
+  701  fswebcam --help
+  702  fswebcam --png 8 web-cam-shot.jpg
+  703  fswebcam --png 8 web-cam-shot.png
+  704  ls -la /dev/i2c-0
+  705  fswebcam --png 8 web-cam-shot.png
+  706  ls /dev/v*
+  707  fswebcam --png 8 web-cam-shot.png
+  708  sudo fswebcam --png 8 web-cam-shot.png
+  709  fswebcam -r 640x480 --jpeg 85 -D 1 web-cam-shot.jpg
+  710  fswebcam --png 8 web-cam-shot.png
+  711  fswebcam --png 8 -F 2 web-cam-shot.png
+  712  ls
+  713  fswebcam --png 8 -F 2 web-cam-shot.png
+  714  fg
+  715  mplayer -vo png -frames 1 tv://
+  716  sudo apt-get install subversion
+  717  fswebcam --png 8 -F 2 web-cam-shot.png
+  718  ls
+  719  svn checkout http://camshot.googlecode.com/svn/trunk/ camshot-read-only
+  720  cd camshot-read-only/
+  721  ls
+  722  make
+  723  ./camshot 
+  724  sudo apt-get install vlc
+  725  vlc -I dummy v4l2:///dev/video0 --video-filter scene --no-audio --scene-path /home/pi --scene-prefix webcam-taken-picture-prefix --scene-format png vlc://quit --run-time=1
+  726  ls
+  727  ls /dev/v*
+  728  sudo vlc -I dummy v4l2:///dev/video0 --video-filter scene --no-audio --scene-path /home/pi --scene-prefix webcam-taken-picture-prefix --scene-format png vlc://quit --run-time=1
+  729  apt-get install --yes v4l-utils
+  730  sudo apt-get install --yes v4l-utils
+  731  sudo vlc -I dummy v4l2:///dev/video0 --video-filter scene --no-audio --scene-path /home/pi --scene-prefix webcam-taken-picture-prefix --scene-format png vlc://quit --run-time=1
+  732  vlc -I dummy v4l2:///dev/video0 --video-filter scene --no-audio --scene-path /home/pi --scene-prefix webcam-taken-picture-prefix --scene-format png vlc://quit --run-time=1
+  733  mplayer tv:// -tv driver=v4l:device=/dev/video0:width=320:height=240:outfmt=rgb24 -frames 1 -vo jpeg
+  734  sudo apt-get install --yes v4l-conf
+  735  mplayer tv:// -tv driver=v4l:device=/dev/video0:width=320:height=240:outfmt=rgb24 -frames 1 -vo jpeg
+  736  sudo apt-get install --yes v4l2loopback-*
+  737  mplayer tv:// -tv driver=v4l:device=/dev/video0:width=320:height=240:outfmt=rgb24 -frames 1 -vo jpeg
+  738  vlc -I dummy v4l2:///dev/video0 --video-filter scene --no-audio --scene-path /home/pi --scene-prefix webcam-taken-picture-prefix --scene-format png vlc://quit --run-time=1
+  739  python -m SimpleHTTPServer &
+  740  fg
+  741  python -m SimpleHTTPServer
+  742  cd /dev/shm
+  743  python -m SimpleHTTPServer
+  744  ls
+  745  ls /dev/v4l/by-id/usb-046d_Camera-video-index0 
+  746  ffmpeg -f video4linux2 -i /dev/v4l/by-id/usb-046d_Camera-video-index0 -vframes 1 output-picture.jpeg
+  747  sudo apt-get install ffmpeg
+  748  sudo apt-get update
+  749  ffmpeg -f video4linux2 -i /dev/v4l/by-id/usb-046d_Camera-video-index0 -vframes 1 output-picture.jpeg
+  750  sudo apt-get install ffmpeg
+  751  ffmpeg -f video4linux2 -i /dev/v4l/by-id/usb-046d_Camera-video-index0 -vframes 1 output-picture.jpeg
+  752  mplayer tv:// -tv driver=v4l:device=/dev/video0:width=320:height=240:outfmt=rgb24 -frames 1 -vo jpeg
+  753  mplayer tv:// -tv driver=v4l:device=/dev/video0 -frames 1 -vo jpeg
+  754  USE="v4l v4l2" emerge mplayer
+  755  sudo apt-get install emerge
+  756  mplayer tv:// -tv driver=v4l2:device=/dev/video0:width=320:height=240:outfmt=rgb24 -frames 1 -vo jpeg
+  757  ls
+  758  mplayer -vo png -frames 1 tv://
+  759  ls /dev/v4l/by-id/
+  760  mplayer tv:// -tv driver=v4l:device=/dev/v4l/by-id/usb-046d_Camera-video-index0 -frames 1 -vo jpeg
+  761  mplayer tv:// -tv driver=v4l2:device=/dev/v4l/by-id/usb-046d_Camera-video-index0 -frames 1 -vo jpeg
+  762  ffmpeg -f video4linux2 -i /dev/v4l/by-id/usb-046d_Camera-video-index0 -vframes 1 output-picture.jpeg
+  763  ffmpeg -f video4linux -i /dev/v4l/by-id/usb-046d_Camera-video-index0 -vframes 1 output-picture.jpeg
+  764  ffmpeg -f video4linux2 -i /dev/v4l/by-id/usb-046d_Camera-video-index0 -vframes 1 output-picture.jpeg
+  765  sudo ffmpeg -f video4linux2 -i /dev/v4l/by-id/usb-046d_Camera-video-index0 -vframes 1 output-picture.jpeg
+  766  fswebcam --png 8 -F 2 web-cam-shot.png
+  767  fswebcam --png 8 -F 1 web-cam-shot.png
+  768  python -m SimpleHTTPServer &
+  769  fswebcam --png 8 -F 1 web-cam-shot.png
+  770  fg
+  771  fswebcam --png 8 -F 1 web-cam-shot.png
+  772  python -m SimpleHTTPServer &
+  773  fswebcam --png 8 -F 1 web-cam-shot.png
+  774  fswebcam --png 8 -F 10 web-cam-shot.png
+  775  fg
+  776  python -m SimpleHTTPServer &2>/dev/null &
+  777  fg
+  778  ls
+  779  python -m SimpleHTTPServer 2>/dev/null &
+  780  python -m SimpleHTTPServer >/dev/null &
+  781  fg
+  782  python -m SimpleHTTPServer >/dev/null &
+  783  fswebcam --png 8 -F 1 web-cam-shot.png
+  784  fswebcam --help
+  785  fswebcam --no-timestamp --greyscale --png 8 -F 1 web-cam-shot.png
+  786  ls
+  787  rm web-cam-shot.*
+  788  fswebcam --no-timestamp --greyscale --png 8 -F 1 web-cam-shot.png
+  789  rm web-cam-shot.png; fswebcam --no-timesfswebcam --no-timestamp --greyscale --png 8 -F 1 web-cam-shot.png
+  790  rm web-cam-shot.png && fswebcam --no-timesfswebcam --no-timestamp --greyscale --png 8 -F 1 web-cam-shot.png
+  791  ls;ls
+  792  rm web-cam-shot.png;fswebcam --no-timesfswebcam --no-timestamp --greyscale --png 8 -F 1 web-cam-shot.png
+  793  swebcam --no-timesfswebcam --no-timestamp --greyscale --png 8 -F 1 web-cam-shot.png
+  794  rm web-cam-shot.png;fswebcam --no-timestamp --greyscale --png 8 -F 1 web-cam-shot.png
+  795  rm web-cam-shot.png;fswebcam --no-timestamp --no-banner --greyscale --png 8 -F 1 web-cam-shot.png
+  796  rm web-cam-shot.png;fswebcam --no-timestamp --no-banner --greyscale --png 8 -F 5 web-cam-shot.png
+  797  rm web-cam-shot.png;fswebcam --no-timestamp --no-banner --greyscale --png 8  web-cam-shot.png
+  798  fg
+  799  mplayer -vo png -frames 1 tv://
+  800  lsmod |grep video
+  801  sudo apt-get search uvc
+  802  mplayer -vo png -frames 1 tv://
+  803  ls /dev/video0 
+  804  mplayer tv:// -tv driver=v4l:device=/dev/video0 -vo jpeg
+  805  ffmpeg -f video4linux2 -i /dev/v4l/by-id/usb-046d_Camera-video-index0 -vframes 1 output-picture.jpeg
+  806  dmesg|tail
+  807  mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15 -vf screenshot
+  808  sudo apt-get install v4l2ucp 
+  809  v4l2ucp 
+  810  ls
+  811  wget http://www.linuxconsulting.ro/picturegrabber/src/picturegrabber-src-0.4.2.tgz
+  812  tar zxvf picturegrabber-src-0.4.2.tgz 
+  813  ls
+  814  mkdir picgra
+  815  mv Makefile picgra/
+  816  mv PictureGrabber.c picgra/
+  817  ls
+  818  cd picgra/
+  819  ls
+  820  make
+  821  cat Makefile 
+  822  make
+  823  sudo apt-get install libv4l-dev
+  824  make
+  825  vi PictureGrabber.c 
+  826  make
+  827  sudo apt-get install libjpeg62*
+  828  make
+  829  ./PictureGrabber 
+  830  ./PictureGrabber -c 1 -d /dev/video0 
+  831  ./PictureGrabber -c 1 -d /dev/video0 -f out
+  832  ./PictureGrabber -c 1 -d /dev/video0 -v
+  833  ./PictureGrabber -c 1 -d /dev/video0 -f out -c 1
+  834  ./PictureGrabber -c 1 -d /dev/video0 -f out -c 2
+  835  ./PictureGrabber -c 2 -d /dev/video0
+  836  ./PictureGrabber -c2 -d /dev/video0
+  837  ./PictureGrabber -c 2 -d /dev/video0
+  838  ./PictureGrabber -c 2 -d /dev/video0 sadf
+  839  ./PictureGrabber -c 2 -d /dev/video0
+  840  ./PictureGrabber -c -1 -d /dev/video0
+  841  ./PictureGrabber -c 2 -d /dev/video0 -b
+  842  ./PictureGrabber -c 2 
+  843  make
+  844  ./PictureGrabber -c 2 -d /dev/video0 -b
+  845  ./PictureGrabber -c 2 -d /dev/video0 
+  846  make
+  847  ./PictureGrabber -c 2 -d /dev/video0 
+  848  make
+  849  ./PictureGrabber -c 2 -d /dev/video0 
+  850  make
+  851  ./PictureGrabber -c 2 -d /dev/video0 
+  852  make
+  853  ./PictureGrabber -c 2 -d /dev/video0 
+  854  make
+  855  ./PictureGrabber -c 2 -d /dev/video0 
+  856  make
+  857  ./PictureGrabber -c 2 -d /dev/video0 
+  858  make
+  859  ./PictureGrabber -c 2 -d /dev/video0 
+  860  ./PictureGrabber -c 1 -d /dev/video0 
+  861  cd ..
+  862  rm web-cam-shot.png;fswebcam --no-timestamp --no-banner --greyscale --png 8  web-cam-shot.png
+  863  fswebcam 
+  864  ls
+  865  fswebcam --help
+  866  rm web-cam-shot.png;fswebcam --no-timestamp --no-banner --greyscale --png 8  web-cam-shot.png
+  867  ls
+  868  wget http://nchc.dl.sourceforge.net/project/zbar/zbar/0.10/zbar-0.10.tar.gz
+  869  tar zxvf zbar-0.10.tar.gz 
+  870  cd zbar-0.10/
+  871  ls
+  872  ./config
+  873  ./configure 
+  874  ./configure --disable-video
+  875  ./configure --help
+  876  ./configure --disable-video --without-imagemagick
+  877  ./configure --help
+  878  ./configure --disable-video --without-imagemagick --without-gtk --without-qt
+  879  ls
+  880  cd examples/
+  881  ls
+  882  gcc -lzbar scan_image.c -o scan_image
+  883  sudo apt-get install libpng12-dev 
+  884  gcc -lzbar scan_image.c -o scan_image
+  885  ls
+  886  cd ..
+  887  make install
+  888  sudo make install
+  889  cd examples/
+  890  gcc -lzbar scan_image.c -o scan_image
+  891  vi scan_image.c
+  892  gcc -lzbar scan_image.c -o scan_image
+  893  gcc -lzbar -lpng scan_image.c -o scan_image
+  894  vi scan_image.c
+  895  gcc -lzbar -lpng scan_image.c -o scan_image
+  896  ./scan_image ../../web-cam-shot.png 
+  897  vim scan_image.c
+  898  vi scan_image.c
+  899  sudo apt-get install vim
+  900  vi scan_image.c
+  901  ./scan_image ../../web-cam-shot.png 
+  902  ./scan_image barcode.png 
+  903  cd ..
+  904  rm web-cam-shot.png;fswebcam --no-timestamp --no-banner --greyscale --png 8  web-cam-shot.png
+  905  zbar-0.10/examples/scan_image web-cam-shot.png 
+  906  rm web-cam-shot.png;fswebcam --no-timestamp --no-banner --greyscale --png 8  web-cam-shot.png
+  907  zbar-0.10/examples/scan_image web-cam-shot.png 
+  908  rm web-cam-shot.png;fswebcam --no-timestamp --no-banner --greyscale --png 8  web-cam-shot.png
+  909  ls /tmp/
+  910  cd /dev/shm/
+  911  ls
+  912  cd ..
+  913  cd ~
+  914  fswebcam --no-timestamp --no-banner --greyscale --png 8  /dev/shm/web-cam-shot.png
+  915  fswebcam --no-timestamp --no-banner --greyscale --png 1  /dev/shm/web-cam-shot.png
+  916  fswebcam --no-timestamp --no-banner --greyscale --png 2 /dev/shm/web-cam-shot.png
+  917  zbar-0.10/examples/scan_image /dev/shm/web-cam-shot.png
+  918  fswebcam --no-timestamp --no-banner --greyscale --png 2 /dev/shm/web-cam-shot.png;zbar-0.10/examples/scan_image /dev/shm/web-cam-shot.png
+  919  zbar-0.10/examples/scan_image /dev/shm/web-cam-shot.png
+  920  fswebcam --no-timestamp --no-banner --greyscale --png 2 /dev/shm/web-cam-shot.png;zbar-0.10/examples/scan_image /dev/shm/web-cam-shot.png
+  921  zbar-0.10/examples/scan_image /dev/shm/web-cam-shot.png
+  922  fswebcam --no-timestamp --no-banner --greyscale --png 2 /dev/shm/web-cam-shot.png;zbar-0.10/examples/scan_image /dev/shm/web-cam-shot.png
+  923  fswebcam 
+  924  fswebcam --help
+  925  fswebcam -q --no-timestamp --no-banner --greyscale --png 2 /dev/shm/web-cam-shot.png;zbar-0.10/examples/scan_image /dev/shm/web-cam-shot.png
+  926  python
+  927  pwd
+  928  cd cat_ear/pi/
+  929  python fswebcam_zbar.py 
+  930  python
+  931  python fswebcam_zbar.py 
+  932  sudo init 0
+  933  cd cat_ear/
+  934  cd pi
+  935  ./led 
+  936  sudo ./led 
+  937  ls
+  938  python fswebcam_zbar.py 
+  939  ls
+  940  cd /dev/shm
+  941  python -m SimpleHTTPServer >/dev/null &
+  942  fg
+  943  ls
+  944  vim /etc/wpa_supplicant/wpa_supplicant.conf 
+  945  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+  946  sudo init 0
+  947  ls
+  948  ifconfig 
+  949  ls
+  950  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+  951  sudo /etc/init.d/networking restart
+  952  ifconfig 
+  953  ping 192.168.119.1
+  954  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+  955  sudo /etc/init.d/networking restart
+  956  ifconfig 
+  957  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+  958  sudo /etc/init.d/networking restart
+  959  ifconfig 
+  960  wpa_cli --help
+  961  wpa_cli reconfigure
+  962  sudo wpa_cli reconfigure
+  963  wpa_cli reconnect
+  964  ps aux | grep wpa
+  965  ps aux | grep w
+  966  sudo init 6
+  967  ifconfig 
+  968  ps aux | grep w
+  969  ps aux | grep wpa
+  970  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+  971  ps aux | grep wpa
+  972  sudo wpa_cli reconfigure
+  973  ifconfig 
+  974  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+  975  sudo wpa_cli reconfigure
+  976  ifconfig 
+  977  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+  978  wpa_cli reconfigure
+  979  ifconfig 
+  980  ping www.baidu.com
+  981  sudo ls
+  982  sudo su
+  983  cd cat_ear/pi/
+  984  sudo ./led 
+  985  gcc -lwiringPi -o led led.c
+  986  sudo ./led 
+  987  gcc -lwiringPi -o led led.c
+  988  sudo ./led 
+  989  gcc -lwiringPi -o led led.c
+  990  sudo ./led 
+  991  gcc -lwiringPi -o led led.c
+  992  sudo ./led 
+  993  gcc -lwiringPi -o led led.c
+  994  sudo ./led 
+  995  gcc -lwiringPi -o led led.c
+  996  sudo ./led 
+  997  gcc -lwiringPi -o led led.c
+  998  sudo ./led 
+  999  gcc -lwiringPi -o led led.c
+ 1000  sudo ./led 
+ 1001  gcc -lwiringPi -o led led.c
+ 1002  sudo ./led 
+ 1003  gcc -lwiringPi -o led led.c
+ 1004  sudo ./led 
+ 1005  gcc -lwiringPi -o led led.c
+ 1006  sudo ./led 
+ 1007  sudo init 0
+ 1008  ls
+ 1009  echo "aaaaaaaa" > /dev/shm/led_ne.buf
+ 1010  echo "abababab" > /dev/shm/led_ne.buf
+ 1011  python
+ 1012  ifconfig 
+ 1013  pwd
+ 1014  cd cat_ear/pi
+ 1015  python check_network.py 
+ 1016  python
+ 1017  python check_network.py 
+ 1018  python
+ 1019  python check_network.py 
+ 1020  top
+ 1021  python check_network.py 
+ 1022  runlevel 
+ 1023  vim /etc/rc2.d/S02ssh 
+ 1024  chkconfig --list
+ 1025  vim /etc/rc2.d/S99led
+ 1026  sudo vim /etc/rc2.d/S99led
+ 1027  chmod 755 /etc/rc2.d/S99led 
+ 1028  sudo chmod 755 /etc/rc2.d/S99led 
+ 1029  sudo /etc/rc2.d/S99led 
+ 1030  sudo init 6
+ 1031  cd cat_ear/pi/
+ 1032  sudo ./led 
+ 1033  gcc -lwiringPi -o led led.c
+ 1034  sudo ./led 
+ 1035  gcc -lwiringPi -o led led.c
+ 1036  sudo ./led 
+ 1037  gcc -lwiringPi -o led led.c
+ 1038  sudo ./led 
+ 1039  gcc -lwiringPi -o led led.c
+ 1040  sudo ./led 
+ 1041  gcc -lwiringPi -o led led.c
+ 1042  sudo ./led 
+ 1043  gcc -lwiringPi -o led led.c
+ 1044  sudo ./led 
+ 1045  gcc -lwiringPi -o led led.c
+ 1046  sudo ./led 
+ 1047  gcc -lwiringPi -o led led.c
+ 1048  sudo ./led 
+ 1049  gcc -lwiringPi -o led led.c
+ 1050  sudo ./led 
+ 1051  gcc -lwiringPi -o led led.c
+ 1052  sudo ./led 
+ 1053  gcc -lwiringPi -o led led.c
+ 1054  sudo ./led 
+ 1055  gcc -lwiringPi -o led led.c
+ 1056  sudo ./led 
+ 1057  gcc -lwiringPi -o led led.c
+ 1058  sudo ./led 
+ 1059  pwd
+ 1060  nohup ./led 1 > /dev/null
+ 1061  nohup ./led 1>/dev/null
+ 1062  nohup ./led 2>/dev/null
+ 1063  ps aux | grep led
+ 1064  nohup sudo  ./led 2>/dev/null
+ 1065  nohup sudo ./led &
+ 1066  ls
+ 1067  rm nohup.out 
+ 1068  kill 2530
+ 1069  sudo kill 2530
+ 1070  ps aux | grep led
+ 1071  sudo /etc/rc2.d/S99led 
+ 1072  sudo vim /etc/rc2.d/S99led 
+ 1073  init 6
+ 1074  sudo init 6
+ 1075  more /var/log/messages 
+ 1076  tail -100 /var/log/messages 
+ 1077  tail -100 /var/log/messages | grep led
+ 1078  tail -1000 /var/log/messages | grep led
+ 1079  service 
+ 1080  service --status-all
+ 1081  sudo /etc/rc2.d/S99led 
+ 1082  ps aux | grep led
+ 1083  kill 2370
+ 1084  sudo kill 2370
+ 1085  sudo kill 2369
+ 1086  service 
+ 1087  service --status-all
+ 1088  sudo vim /etc/rc.local 
+ 1089  sudo init 6
+ 1090  sudo vim /etc/rc.local 
+ 1091  sudo init 6
+ 1092  top
+ 1093  kill 2017
+ 1094  sudo kill 2017
+ 1095  cat /etc/rc.local 
+ 1096  sudo /home/pi/cat_ear/pi/led &
+ 1097  fg
+ 1098  sudo nohup /home/pi/cat_ear/pi/led &
+ 1099  ls
+ 1100  rm nohup.out 
+ 1101  ls
+ 1102  top
+ 1103  ls
+ 1104  cd cat_ear/pi/
+ 1105  python camera_control.py 
+ 1106  sudo python camera_control.py 
+ 1107  python
+ 1108  ls
+ 1109  vim /etc/wpa_supplicant/wpa_supplicant.conf 
+ 1110  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+ 1111  sudo python camera_control.py 
+ 1112  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+ 1113  sudo python camera_control.py 
+ 1114  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+ 1115  python
+ 1116  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+ 1117  sudo python camera_control.py 
+ 1118  python
+ 1119  /home/pi/zbar-0.10/examples/scan_image /dev/shm/web-cam-shot.png
+ 1120  cd /home/pi/zbar-0.10/examples/
+ 1121  vim scan_image.c
+ 1122  gcc -lzbar -lpng scan_image.c -o scan_image
+ 1123  /home/pi/zbar-0.10/examples/scan_image /dev/shm/web-cam-shot.png
+ 1124  vim scan_image.c
+ 1125  gcc -lzbar -lpng scan_image.c -o scan_image
+ 1126  /home/pi/zbar-0.10/examples/scan_image /dev/shm/web-cam-shot.png
+ 1127  cd -
+ 1128  sudo python camera_control.py 
+ 1129  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+ 1130  sudo nohup python camera_control.py > /dev/null &
+ 1131  ps aux | grep check_network
+ 1132  cat /etc/rc.local 
+ 1133  python /home/pi/cat_ear/pi/check_network.py
+ 1134  sudo  python /home/pi/cat_ear/pi/check_network.py
+ 1135  vim /etc/wpa_supplicant/wpa_supplicant.conf 
+ 1136  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+ 1137  sudo vim /etc/rc.local 
+ 1138  sudo init 6
+ 1139  ps aux | grep led
+ 1140  vim /etc/rc.local 
+ 1141  sudo vim /etc/rc.local 
+ 1142  sudo init 6
+ 1143  ps aux | grep led
+ 1144  vim /etc/rc.local 
+ 1145  sduo vim /etc/rc.local 
+ 1146  sudo vim /etc/rc.local 
+ 1147  sudo init 6
+ 1148  ps aux | grep led
+ 1149  sudo vim /etc/rc.local 
+ 1150  sudo init 6
+ 1151  ls
+ 1152  sudo vim /etc/rc.local 
+ 1153  python /home/pi/cat_ear/pi/camera_control.py 
+ 1154  sudo python /home/pi/cat_ear/pi/camera_control.py 
+ 1155  sudo vim /etc/rc.local 
+ 1156  sudo init 6
+ 1157  sudo vim /etc/rc.local 
+ 1158  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+ 1159  sudo init 0
+ 1160  ls
+ 1161  cd cat_ear/pi/
+ 1162  ls
+ 1163  python ce.py 
+ 1164  python
+ 1165  def write_prograss(r):
+ 1166  python
+ 1167  python ce.py 
+ 1168  sudo init 0
+ 1169  python
+ 1170  python ce.py 
+ 1171  cd cat_ear/pi/
+ 1172  python ce.py 
+ 1173  sudo init 0
+ 1174  python ce.py 
+ 1175  cd cat_ear/pi/
+ 1176  python ce.py 
+ 1177  sudo init 0
+ 1178  cd cat_ear/pi/
+ 1179  python ce.py 
+ 1180  sudo init 0
+ 1181  cd cat_ear/pi/
+ 1182  python ce.py 
+ 1183  sudo init 0
+ 1184  cd cat_ear/pi/
+ 1185  python ce.py 
+ 1186  sudo init 0
+ 1187  cd /dev/shm
+ 1188  python -m SimpleHTTPServer >/dev/null &
+ 1189  fg
+ 1190  python -m SimpleHTTPServer 
+ 1191  ls
+ 1192  cd cat_ear/pi/
+ 1193  python ce.py 
+ 1194  sudo python ce.py 
+ 1195  vim /etc/wpa_supplicant/wpa_supplicant.conf 
+ 1196  sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+ 1197  python
+ 1198  ifconfig 
+ 1199  python
+ 1200  ps aux | grep cam
+ 1201  sudo kill 2032
+ 1202  python /home/pi/cat_ear/pi/camera_control.py
+ 1203  sudo python /home/pi/cat_ear/pi/camera_control.py
+ 1204  fswebcam -q --no-timestamp --no-banner --greyscale --png 2 /dev/shm/web-cam-shot.png
+ 1205  sudo fswebcam -q --no-timestamp --no-banner --greyscale --png 2 /dev/shm/web-cam-shot.png
+ 1206  sudo python /home/pi/cat_ear/pi/camera_control.py
+ 1207  sudo init 0
+ 1208  ls
+ 1209  sudo python /home/pi/cat_ear/pi/ce.py 
+ 1210  top
+ 1211  ls
+ 1212  cd cat_ear/
+ 1213  git status
+ 1214  git add pi/*
+ 1215  git status
+ 1216  git commit -am "network led and cam"
+ 1217  git push
+ 1218  git pull
+ 1219  git push
+ 1220  ls
+ 1221  ps aux 
+ 1222  sudo init 0
+ 1223  cd cat_ear/pi/
+ 1224  sudo python ce.py 
+ 1225  sudo init 0
+ 1226  ls
+ 1227  history
+ 1228  sudo fswebcam -q --no-timestamp --no-banner --greyscale --png 2 /dev/shm/web-cam-shot.png
+ 1229  cd /dev/shm
+ 1230  python -m SimpleHTTPServer
+ 1231  sudo fswebcam -q --no-timestamp --no-banner --greyscale --png 2 /dev/shm/web-cam-shot.png
+ 1232  python -m SimpleHTTPServer
+ 1233  python -m SimpleHTTPServer &
+ 1234  sudo fswebcam -q --no-timestamp --no-banner --greyscale --png 2 /dev/shm/web-cam-shot.png
+ 1235  fg
+ 1236  init 0
+ 1237  sudo init 0
+ 1238  cd cat_ear/pi/
+ 1239  python ce.py 
+ 1240  sudo python ce.py 
+ 1241  sus
+ 1242  sudo init 0
+ 1243  ls
+ 1244  cd cat_ear/
+ 1245  git pull
+ 1246  cat pi/control_center.py 
+ 1247  rm pi/control_center.py 
+ 1248  git pull
+ 1249  python pi/control_center.py 
+ 1250  python
+ 1251  cd pi
+ 1252  sudo python ce.py 
+ 1253  python
+ 1254  sudo python ce.py 
+ 1255  python control_center.py
+ 1256  sudo python ce.py 
+ 1257  ping douban.fm
+ 1258  sudo python ce.py 
+ 1259  python control_center.py
+ 1260  sudo python ce.py 
+ 1261  alsamixer 
+ 1262  sudo python ce.py 
+ 1263  sudo init 0
+ 1264  cd cat_ear/
+ 1265  cd pi
+ 1266  ls
+ 1267  sudo python ce.py 
+ 1268  sudo python control_center.py
+ 1269  ping www.baidu.com
+ 1270  sudo python control_center.py
+ 1271  sudo python ce.py 
+ 1272  sudo init 0
+ 1273  cd cat_ear/pi
+ 1274  ls
+ 1275  python
+ 1276  sudo python ce.py 
+ 1277  python
+ 1278  sudo python ce.py 
+ 1279  sudo init 0
+ 1280  ping www.baidu.com
+ 1281  pydoc -p 10080
+ 1282  pydoc 
+ 1283  python
+ 1284  sudo apt-get install python-alsaaudio 
+ 1285  python
+ 1286  alsamixer 
+ 1287  sudo python
+ 1288  alsamixer 
+ 1289  sudo python
+ 1290  alsamixer 
+ 1291  sudo python
+ 1292  python
+ 1293  alsamixer 
+ 1294  cd cat_ear/pi/
+ 1295  sudo python ce.py 
+ 1296  alsamixer 
+ 1297  fg
+ 1298  alsamixer 
+ 1299  fg
+ 1300  alsamixer 
+ 1301  python
+ 1302  alsamixer 
+ 1303  fg
+ 1304  alsamixer 
+ 1305  cd cat_ear/pi/
+ 1306  sudo python ce.py 
+ 1307  amixer 
+ 1308  emerge alsa-driver
+ 1309  alsactl 
+ 1310  /etc/init.d/alsasound restart 
+ 1311  sudo /etc/init.d/alsa-utils restart
+ 1312  sudo python ce.py 
+ 1313  vim /etc/asound.conf 
+ 1314  speaker-test -Dplug:front -c2
+ 1315  speaker-test
+ 1316  sudo alsamixer 
+ 1317  speaker-test
+ 1318  gst-launch-0.10 audiotestsrc ! audioconvert ! audioresample ! alsasink
+ 1319  ls
+ 1320  cd ..
+ 1321  ls
+ 1322  cd ..
+ 1323  ls
+ 1324  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! alsasink
+ 1325  sudo apt-get install gstreamer0.10-pulseaudio
+ 1326  gconftool-2
+ 1327  gconftool-2 --help
+ 1328  gconftool-2 -a /system/gstreamer/0.10/default
+ 1329  gconftool-2 -t string --set /system/gstreamer/0.10/default/audiosink pulsesink
+ 1330  gconftool-2 -t string --set /system/gstreamer/0.10/default/audiosrc pulsesrc
+ 1331  gst-launch-0.10 audiotestsrc ! audioconvert ! audioresample ! alsasink
+ 1332  gconftool-2 -t string --set /system/gstreamer/0.10/default/musicaudiosink pulsesink
+ 1333  gconftool-2 -a /system/gstreamer/0.10/default
+ 1334  gst-launch-0.10 audiotestsrc ! audioconvert ! audioresample ! alsasink
+ 1335  sudo apt-get install pulseaudio
+ 1336  sudo vim /etc/mpd.conf
+ 1337  sudo apt-get install pulseaudio-utils
+ 1338  sudo apt-get install pulseaudio-module-gconf
+ 1339  sudo vim /etc/pulse/default.pa 
+ 1340  gst-launch-0.10 audiotestsrc ! audioconvert ! audioresample ! alsasink
+ 1341  sudo vim /etc/pulse/default.pa 
+ 1342  sudo /etc/init.d/pulseaudio restart
+ 1343  sudo /etc/init.d/pulseaudio start
+ 1344  sudo apt-get mpd
+ 1345  sudo apt-get install mpd
+ 1346  sudo vim /etc/pulse/default.pa 
+ 1347  sudo vim /etc/mpd.conf
+ 1348  gst-launch-0.10 audiotestsrc ! audioconvert ! audioresample ! alsasink
+ 1349  sudo vim /etc/mpd.conf
+ 1350  sudo /etc/init.d/pulseaudio restart
+ 1351  sudo /etc/init.d/mpd restart
+ 1352  gst-launch-0.10 audiotestsrc ! audioconvert ! audioresample ! alsasink
+ 1353  sudo init 6
+ 1354  sudo alsamixer 
+ 1355  alsamixer 
+ 1356  sudo alsamixer 
+ 1357  mpd
+ 1358  pulseaudio 
+ 1359  sudo alsamixer 
+ 1360  :q
+ 1361  sudo alsamixer 
+ 1362  gst-launch-0.10 audiotestsrc ! audioconvert ! audioresample ! alsasink
+ 1363  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! alsasink
+ 1364  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1365  gst-launch-0.10 audiotestsrc ! audioconvert ! audioresample ! pulsesink
+ 1366  gst-launch-0.10 audiotestsrc ! audioconvert ! audioresample ! asdfsink
+ 1367  sudo modprobe snd_bcm2835
+ 1368  sudo amixer cset numid=3 1
+ 1369  gst-launch-0.10 audiotestsrc ! audioconvert ! audioresample ! asdfsink
+ 1370  gst-launch-0.10 audiotestsrc ! audioconvert ! audioresample ! pulsesink
+ 1371  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! alsasink
+ 1372  sudo echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+ 1373  sudo sudo echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+ 1374  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! alsasink
+ 1375  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulssink
+ 1376  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1377  sudo /etc/init.d/pulseaudio restart
+ 1378  sudo apt-get install pulseaudio
+ 1379  mpd play p1877389.mp3 
+ 1380  mpd play
+ 1381  mpd p1877389.mp3 
+ 1382  mpd 
+ 1383  mpd --help
+ 1384  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! mpdsink
+ 1385  sudo /etc/init.d/pulseaudio restart
+ 1386  pulseaudio 
+ 1387  ps aux 
+ 1388  ps aux | grep pule
+ 1389  ps aux | grep puls
+ 1390  pulseaudio --help
+ 1391  pulseaudio --start
+ 1392  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1393  ps aux | grep puls
+ 1394  sudo apt-get install pulseaudio pulseaudio-module-zeroconf
+ 1395  sudo pulseaudio --system 
+ 1396  sudo pulseaudio -D
+ 1397  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1398  sudo vim /etc/pulse/default.pa 
+ 1399  sudo apt-get install pulseaudio-utils
+ 1400  paplay 
+ 1401  paplay p1877389.mp3 
+ 1402  paplay --help
+ 1403  man paplay 
+ 1404  wget http://www.last.fm/music/%EF%BC%AD%EF%BC%AF%EF%BC%B3%EF%BC%A1%EF%BC%A9%EF%BC%A3.%EF%BC%B7%EF%BC%A1%EF%BC%B6
+ 1405  ls
+ 1406  ls -1
+ 1407  ls -1 
+ 1408  ls -1  | head -n 1
+ 1409  ls
+ 1410  ls -1  | head -n 1 | xargs rm
+ 1411  ls
+ 1412  wget http://www.last.fm/music/%EF%BC%AD%EF%BC%AF%EF%BC%B3%EF%BC%A1%EF%BC%A9%EF%BC%A3.%EF%BC%B7%EF%BC%A1%EF%BC%B6 -o asdf.wav
+ 1413  ls
+ 1414  ls -1  | head -n 1 | xargs rm
+ 1415  wget http://nokiafree.org/forums/threads/78208-Looking-for-NOKIA-standard-ringtones-.wav?p=378176
+ 1416  wget https://atmire.com/labs18/flashstreamview/bitstream/handle/123456789/7638/daffyduck1.wav?sequence=1
+ 1417  ls
+ 1418  rm asdf.wav 
+ 1419  mv daffyduck1.wav\?sequence\=1  daffyduck1.wav
+ 1420  ls
+ 1421  ls -l
+ 1422  mpg321 daffyduck1.wav
+ 1423  rm daffyduck1.wav 
+ 1424  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1425  ls
+ 1426  mpg123 win.wav
+ 1427  mpg321 win.wav
+ 1428  paplay win.wav 
+ 1429  aplay win.wav 
+ 1430  pulseaudio -D
+ 1431  aplay win.wav 
+ 1432  paplay win.wav 
+ 1433  vim /etc/asound.conf 
+ 1434  sudo vim /etc/asound.conf 
+ 1435  sudo /etc/init.d/alsa-utils restart
+ 1436  paplay win.wav 
+ 1437  aplay win.wav 
+ 1438  sudo vim /etc/asound.conf 
+ 1439  sudo /etc/init.d/alsa-utils restart
+ 1440  aplay win.wav 
+ 1441  sudo vim /etc/asound.conf 
+ 1442  sudo /etc/init.d/alsa-utils restart
+ 1443  aplay win.wav 
+ 1444  sudo /etc/init.d/pulseaudio restart
+ 1445  mpc 
+ 1446  sudo apt-get install mpc
+ 1447  mpc play
+ 1448  mpc 
+ 1449  mpc --help
+ 1450  man mpc
+ 1451  mpc add p1877389.mp3 
+ 1452  man mpc
+ 1453  mpc add p1877389.mp3 
+ 1454  mpc play
+ 1455  mpc insert p1877389.mp3 
+ 1456  mpd
+ 1457  ps aux 
+ 1458  ps aux  | grep mpd
+ 1459  pulseaudio 
+ 1460  vim /etc/pulse/default.pa 
+ 1461  vim /etc/pulse/client.conf 
+ 1462  vim /etc/default/pulseaudio 
+ 1463  sudo vim /etc/default/pulseaudio 
+ 1464  sudo init 6
+ 1465  ls
+ 1466  paplay win.wav
+ 1467  ls
+ 1468  sudo paplay win.wav
+ 1469  paplay win.wav
+ 1470  ps aux 
+ 1471  ps aux  | grep puls
+ 1472  sudo usermod -a -G pulse-access pi
+ 1473  gpasswd -a pi pulse
+ 1474  sudo gpasswd -a pi pulse
+ 1475  sudo gpasswd -a pi pulse-access
+ 1476  paplay win.wav
+ 1477  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1478  paplay win.wav
+ 1479  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1480  paplay win.wav
+ 1481  gst-launch-0.10 audiotestsrc ! audioconvert ! audioresample ! pulsesink
+ 1482  alsamixer 
+ 1483  gst-launch-0.10 audiotestsrc ! audioconvert ! audioresample ! pulsesink
+ 1484  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1485  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! alsasink
+ 1486  alsamixer 
+ 1487  fg
+ 1488  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1489  paplay win.wav
+ 1490  alsamixer 
+ 1491  paplay win.wav
+ 1492  alsamixer 
+ 1493  paplay win.wav
+ 1494  vim /etc/pulse/default.pa 
+ 1495  vim /etc/pulse/system.pa 
+ 1496  sudo vim /etc/pulse/system.pa 
+ 1497  gst-launch -v audiotestsrc ! audioconvert ! volume volume=0.4 ! pulsesink
+ 1498  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.4 ! pulsesink
+ 1499  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.1 ! pulsesink
+ 1500  sudo apt-get install gstreamer0.10-pulseaudio 
+ 1501  vim /etc/asound.conf 
+ 1502  sduo vim /etc/asound.conf 
+ 1503  sudo vim /etc/asound.conf 
+ 1504  sudo /etc/init.d/alsa-utils restart
+ 1505  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.1 ! pulsesink
+ 1506  aplay win.wav 
+ 1507  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.1 ! alsasink
+ 1508  aplay win.wav 
+ 1509  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.1 ! alsasink
+ 1510  sudo init 6
+ 1511  aplay win.wav 
+ 1512  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.1 ! alsasink
+ 1513  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.1 ! pulsesink
+ 1514  gst-inspect-0.10 pulsesink
+ 1515  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.1 ! pulsesink
+ 1516  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.1 ! alsasink
+ 1517  cd cat_ear/pi/
+ 1518  sudo python ce.py 
+ 1519  sudo usermod -a -G pulse-access root
+ 1520  gpasswd -a root pulse
+ 1521  sudo gpasswd -a root pulse
+ 1522  sudo gpasswd -a root pulse-access
+ 1523  sudo usermod -a -G pulse-access root
+ 1524  sudo python ce.py 
+ 1525  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.1 ! autoaudiosink
+ 1526  gst-launch -v audiotestsrc ! audioconvert ! volume volume=0.2 ! pulsesink
+ 1527  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.2 ! pulsesink
+ 1528  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.5 ! pulsesink
+ 1529  aplay win.wav 
+ 1530  aplay ~/win.wav 
+ 1531  paplay ~/win.wav 
+ 1532  sudo aplay ~/win.wav 
+ 1533  sudo paplay ~/win.wav 
+ 1534  sudo /etc/init.d/pulseaudio restart
+ 1535  sudo paplay ~/win.wav 
+ 1536  paplay ~/win.wav 
+ 1537  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.5 ! pulsesink
+ 1538  paplay ~/win.wav 
+ 1539  sudo /etc/init.d/pulseaudio restart
+ 1540  ls
+ 1541  vim /etc/pulse/system.pa 
+ 1542  sudo vim /etc/pulse/system.pa 
+ 1543  sudo vim /etc/pulse/default.pa 
+ 1544  sudo vim /etc/pulse/system.pa 
+ 1545  sudo /etc/init.d/pulseaudio restart
+ 1546  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.5 ! pulsesink
+ 1547  paplay ~/win.wav 
+ 1548  alsamixer 
+ 1549  sudo alsamixer 
+ 1550  paplay ~/win.wav 
+ 1551  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.5 ! pulsesink
+ 1552  sudo /etc/init.d/pulseaudio restart
+ 1553  paplay ~/win.wav 
+ 1554  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.5 ! pulsesink
+ 1555  sudo init 6
+ 1556  ls
+ 1557  paplay ~/win.wav 
+ 1558  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.5 ! pulsesink
+ 1559  paplay ~/win.wav 
+ 1560  sudo /etc/init.d/pulseaudio restart
+ 1561  alsamixer 
+ 1562  sudo alsamixer 
+ 1563  vim /etc/asound.conf 
+ 1564  sudo vim /etc/asound.conf 
+ 1565  sudo /etc/init.d/alsa-utils restart
+ 1566  sudo alsamixer 
+ 1567  paplay ~/win.wav 
+ 1568  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.5 ! pulsesink
+ 1569  sudo /etc/init.d/alsa-utils restart
+ 1570  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.5 ! alsasink
+ 1571  sudo /etc/init.d/alsa-utils restart
+ 1572  pavucontrol
+ 1573  gconftool-2 -a /system/gstreamer/0.10/default
+ 1574  sudo vim /etc/asound.conf 
+ 1575  sudo /etc/init.d/alsa-utils restart
+ 1576  gstreamer-properties
+ 1577  sudo /etc/init.d/alsa-utils restart
+ 1578  sudo /etc/init.d/pulseaudio restart
+ 1579  paplay ~/win.wav 
+ 1580  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.5 ! alsasink
+ 1581  paplay ~/win.wav 
+ 1582  sudo /etc/init.d/pulseaudio restart
+ 1583  asoundconf set-pulseaudio
+ 1584  sudo vim /etc/pulse/daemon.conf 
+ 1585  sudo /etc/init.d/pulseaudio restart
+ 1586  gst-launch-0.10 -v audiotestsrc ! audioconvert ! volume volume=0.5 ! alsasink
+ 1587  sudo /etc/init.d/pulseaudio restart
+ 1588  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1589  sudo vim /etc/pulse/daemon.conf 
+ 1590  vim /etc/sysctl.conf 
+ 1591  sudo vim /etc/sysctl.conf 
+ 1592  sudo init 6
+ 1593  alsamixer 
+ 1594  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1595  sudo /etc/init.d/pulseaudio restart
+ 1596  paplay ~/win.wav 
+ 1597  vim /etc/asound.conf 
+ 1598  sudo vim /etc/asound.conf 
+ 1599  sudo /etc/init.d/alsa-utils restart
+ 1600  paplay ~/win.wav 
+ 1601  aplay ~/win.wav 
+ 1602  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1603  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! alsasink
+ 1604  sudo vim /etc/pulse/default.pa 
+ 1605  sudo vim /etc/pulse/system.pa 
+ 1606  sudo vim /etc/pulse/default.pa 
+ 1607  sudo vim /etc/pulse/system.pa 
+ 1608  sudo /etc/init.d/pulseaudio restart
+ 1609  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! alsasink
+ 1610  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1611  sudo /etc/init.d/alsa-utils restart
+ 1612  sudo /etc/init.d/pulseaudio restart
+ 1613  ps aux 
+ 1614  ps aux | grep pulse
+ 1615  sudo vim /etc/pulse/system.pa 
+ 1616  sudo /etc/init.d/pulseaudio restart
+ 1617  sudo vim /etc/pulse/system.pa 
+ 1618  sudo /etc/init.d/pulseaudio restart
+ 1619  sudo /etc/init.d/pulseaudio start
+ 1620  sudo vim /etc/pulse/system.pa 
+ 1621  sudo /etc/init.d/pulseaudio restart
+ 1622  sudo vim /etc/pulse/system.pa 
+ 1623  sudo vim /etc/pulse/default.pa 
+ 1624  sudo vim /etc/pulse/system.pa 
+ 1625  sudo /etc/init.d/pulseaudio restart
+ 1626  sudo vim /etc/pulse/system.pa 
+ 1627  sudo /etc/init.d/pulseaudio start
+ 1628  aplay ~/win.wav 
+ 1629  paplay ~/win.wav 
+ 1630  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1631  paplay ~/win.wav 
+ 1632  sudo /etc/init.d/pulseaudio start
+ 1633  sudo /etc/init.d/pulseaudio restart
+ 1634  sudo vim /etc/pulse/daemon.conf 
+ 1635  sudo /etc/init.d/pulseaudio start
+ 1636  sudo /etc/init.d/pulseaudio restart
+ 1637  gst-launch-0.10 filesrc location="p1877389.mp3" ! mad ! audioconvert ! audioresample ! pulsesink
+ 1638  sudo vim /etc/pulse/default.pa 
+ 1639  sudo init 0
+ 1640  aplay win.wav 
+ 1641  ls
+ 1642  aplay win.wav 
+ 1643  ls
+ 1644  history
+ 1645  history | head
+ 1646  cd cat_ear/
+ 1647  ls
+ 1648  cd pi
+ 1649  history > history
