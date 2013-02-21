@@ -1,20 +1,24 @@
-+------------------------------------------+
-| Page                                     |          Data Bind
-+------------------------------------------+
-| Control Part.                            |
-|   play button (toggle button)            |  --->    playing:boolean
-|   volume controller (slider or sth.)     |  --->    volume:float ( 0.00 - 1.00 )
-|   channel switcher (select box)          |  --->    channel:string
-|   next (button)                          |  --->    next:boolean
-|                                          |
-| Status Part.                             |
-|   Current Song.                          |
-|     title                                |  --->    db_cur_song['title']
-|     artist                               |  --->    db_cur_song['artist']
-|     album pic                            |  --->    db_cur_song['album']
-|     albumtitle                           |  --->    db_cur_song['albumtitle']
-|                                          |
-+------------------------------------------+
++---------------------------------------+
+| Page                                  |
++---------------------------------------+
+| Control Part.                         |
+|  play button (toggle button)          |
+|   -> playing:boolean                  |
+|  volume controller (slider or sth.)   |
+|   -> volume:float ( 0.00 - 1.00 )     |
+|  channel switcher (select box)        |
+|   -> channel:string                   |
+|  next (button)                        |
+|   -> next:boolean                     |
+|                                       |
+| Status Part.                          |
+|  Current Song.                        |
+|   title      -> db_song['title']      |
+|   artist     -> db_song['artist']     |
+|   album pic  -> db_song['album']      |
+|   albumtitle -> db_song['albumtitle'] |
+|                                       |
++---------------------------------------+
 
 full status example:
 {
