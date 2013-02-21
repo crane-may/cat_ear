@@ -1,0 +1,45 @@
++------------------------------------------+
+| Page                                     |          Data Bind
++------------------------------------------+
+| Control Part.                            |
+| play button (toggle button)              |  --->    playing:boolean
+| volume controller (slider or sth.)       |  --->    volume:float ( 0.00 - 1.00 )
+| channel switcher (select box)            |  --->    channel:string
+| next (button)                            |  --->    next:boolean
+|                                          |
+| Status Part.                             |
+|   Current Song.                          |
+|      title                               |  --->    db_cur_song['title']
+|      artist                              |  --->    db_cur_song['artist']
+|      album pic                           |  --->    db_cur_song['album']
+|      albumtitle                          |  --->    db_cur_song['albumtitle']
+|                                          |
++------------------------------------------+
+
+full status example:
+{
+    volume:0.3,
+    playing:true,
+    next:false,
+    channel: "{\"url\":\"http://douban.fm/j/mine/playlist\",\"headers\":{}}"
+    db_cur_song:{
+        "album":"/subject/1403456/",
+        "picture":"http://img3.douban.com/mpic/s4088278.jpg",
+        "ssid":"5c8a",
+        "artist":"xxxxx",
+        "url":"http://mr3.douban.com/201302211742/7691675d428f116584b58488209b61c2/view/song/small/p673807_192k.mp3",
+        "company":"xxxx",
+        "title":"xxxx",
+        "rating_avg":3.66704,
+        "length":237,
+        "subtype":"",
+        "public_time":"2004",
+        "sid":"673807",
+        "aid":"1403456",
+        "kbps":"192",
+        "albumtitle":"xxx",
+        "like":0
+    },
+    last_update:"web"
+}
+
