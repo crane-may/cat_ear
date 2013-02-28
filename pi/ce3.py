@@ -24,4 +24,4 @@ while True:
 		fetch_playlist()
 	
 	cur_song = play_list.pop()
-	ce2.playit(cur_song["url"])
+	ce2.playit(cur_song["url"],cur_song["length"])

@@ -20,7 +20,7 @@ store_dirty = set([])
 store_default = {
     "playing"   : True,
     "volume"    : 0.005,
-    "channel"   : '{"url":"http://douban.fm/j/mine/playlist","headers":{}}',
+    "channel"   : 'http://douban.fm/j/mine/playlist',
     "next"      : False,
     "like"      : False,
     "unlike"    : False
@@ -39,7 +39,7 @@ def get_did():
 def ccsync():
     global store
     global store_dirty
-    store_set = {}
+    store_set = {"last_update":"pi"}
     
     if len(store_dirty) > 0:
         for dk in store_dirty:
@@ -70,7 +70,14 @@ def ccsync():
     
 def ccget(key):
     if store.has_key(key):
-        return store[key]
+        if store[key] == "true":
+          return True
+        elif store[key] == "false":
+          return False
+        elif re.match(r"^\d+([.]\d+)?$",store[key]):
+          return float(store[key])
+        else:
+          return store[key]
     elif store_default.has_key(key):
         return store_default[key]
     else:
@@ -107,7 +114,17 @@ def controller():
         
 thread.start_new_thread(controller, ())
 
+def remote_sync():
+    while True:
+        time.sleep(5)
+        ccsync()
+
+def sync_interval():
+  ccsync()
+  thread.start_new_thread(remote_sync, ())
+
 if __name__ == "__main__" :
-	while True:
-		print ccget("playing")
+  sync_interval()
+  while True:
+		print ccget("channel")
 		time.sleep(1)

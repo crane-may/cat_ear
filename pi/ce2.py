@@ -1,21 +1,36 @@
-import os,time,urllib2,subprocess,Queue,thread,re,signal,control_center
+import os,time,urllib2,subprocess,Queue,thread,re,signal,control_center,alsaaudio
+
+alsamixer = None
+def mute(is_mute):
+    global alsamixer
+    # if alsamixer == None:
+        # alsamixer = alsaaudio.Mixer("PCM")
+    # alsamixer.setmute(is_mute)
 
 sig_play_over = False
-def stdout_thread(p):
+def stdout_thread(p,length):
 	global sig_play_over
 	ret = ""
+	is_mute = True
+	
 	while True:
 		c = p.stdout.read(1)
+			
+		#print c,
 		if sig_play_over:
 			break
 			
-		if c == "]":
-			mat = re.search("\[(\d+:\d+[.]\d+)$",ret)
+		if c == "[":
+			mat = re.search("Time: (\d+):(\d+).\d+ $",ret)
 			if mat != None:
-				t = mat.group(1)
-				print t
+				t = int(mat.group(1)) * 60 + int(mat.group(2))
+				print "%d / %d" % (t,length)				
+						
+				if t > 0 and is_mute:
+					mute(False)
+					is_mute = False
 				
-				if t.startswith("00:01") :
+				if length - t < 1 :
 					sig_play_over = True
 					break
 			ret = ""
@@ -34,16 +49,21 @@ def play_thread(p, mp3_buf):
 
 p = None
 			
-def playit(url):
+def playit(url,length):
 	global sig_play_over
 	global p
 	print "play === ", url
 	sig_play_over = False
+	
+	if length == 0:
+		return
+	
+	mute(True)
 	p=subprocess.Popen(["mpg123","-q","-v","-"], universal_newlines=True, stdin=subprocess.PIPE,stdout=subprocess.PIPE, stderr=subprocess.STDOUT)  
 	mp3_buf = Queue.Queue()
 		
 	thread.start_new_thread(play_thread, (p, mp3_buf))
-	thread.start_new_thread(stdout_thread, (p,))
+	thread.start_new_thread(stdout_thread, (p,length))
 	
 	request = urllib2.Request(url)
 	request.add_header('User-Agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11')
@@ -101,4 +121,4 @@ def control():
 		
 if __name__ == "__main__":
 	#playit('http://mr5.douban.com/201302141038/38e3d59ec8a6d000a2be02635a8c513d/view/song/small/p154461_192k.mp3')
-	playit('http://mr4.douban.com/201302141225/26957a73d0b93e9fbacf6ff89a41c1bb/view/song/small/p1889972.mp3')
+	playit('http://mr4.douban.com/201302141533/a56e98c539270c8256e9ce4a94b1057d/view/song/small/p1741803_192k.mp3',299)

@@ -2,7 +2,6 @@
 # sudo apt-get install gstreamer0.10-alsa 
 # sudo apt-get install gstreamer0.10-nice 
 # sudo apt-get install python-gst0.10-dev
-# sudo apt-get install gstreamer0.10-good
 # sudo apt-get install gstreamer0.10-plugins-good
 # sudo apt-get install gstreamer0.10-plugins-ugly
 # sudo apt-get install python-gobject
@@ -18,12 +17,30 @@ import gst
 
 socket.setdefaulttimeout(10.0)
 
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(18, GPIO.OUT)
+
+def _unmute():
+    time.sleep(1.2)
+    alsamixer.setmute(False)
+    GPIO.output(18, True)
+
 alsamixer = None
+muted = True
 def mute(is_mute):
     global alsamixer
+    global muted
     if alsamixer == None:
         alsamixer = alsaaudio.Mixer("PCM")
-    alsamixer.setmute(is_mute)
+    if is_mute:
+      alsamixer.setmute(is_mute)
+      GPIO.output(18, not is_mute)
+      muted = True
+      time.sleep(0.8)
+    elif muted:
+      muted = False
+      thread.start_new_thread(_unmute, ())
 
 def volume(vol):
     alsamixer.setvolume( int(math.log10(vol*100.0) / 0.02) )
@@ -65,15 +82,10 @@ def write_prograss(r):
     
     f.close()
 
-def remote_sync(ce_ins):
-    while True:
-        control_center.ccsync()
-        time.sleep(5)
+control_center.sync_interval()
         
 class CLI_Main:
     def __init__(self):
-        thread.start_new_thread(remote_sync, (self,))
-    
         mute(True)
         self.play_list = []
         self.player = gst.Pipeline("player")
@@ -97,6 +109,7 @@ class CLI_Main:
         self.player.get_by_name("http-source").set_property("location", uri)
         self.player.set_state(gst.STATE_PLAYING)
         self.is_playing = True
+        self.is_pause = False
         
         waiting = 0
         while self.is_playing:
@@ -114,8 +127,18 @@ class CLI_Main:
             if control_center.ccchange("playing"):
                 if control_center.ccget("playing"):
                     self.player.set_state(gst.STATE_PLAYING)
+                    self.is_pause = False
+                    mute(False)
                 else:
                     self.player.set_state(gst.STATE_PAUSED)
+                    self.is_pause = True
+                    mute(True)
+            
+            if control_center.ccchange("channel"):
+                self.play_list = []
+                mute(True)
+                self.player.set_state(gst.STATE_NULL)
+                self.is_playing = False
             
             if waiting % 10 == 0:
                 try:
@@ -128,7 +151,8 @@ class CLI_Main:
                     print "%s / %s %f @%f"%(self.convert_s(pos), self.convert_s(dur), 1.0 - pos * 1.0 / dur, control_center.ccget("volume"))
                     write_prograss(1.0 - pos * 1.0 / dur)
                     
-                    mute(False)
+                    if not self.is_pause:
+                      mute(False)
                 except Exception, e:
                     print "00:00 / 00:00"
                     write_prograss(0)
@@ -158,25 +182,28 @@ class CLI_Main:
     
     def fetch_playlist(self):
         write_fetch()
-        chl = json.loads(control_center.ccget("channel"))
-        request = urllib2.Request(chl['url'])
+        request = urllib2.Request(control_center.ccget("channel"))
         request.add_header('User-Agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11')
         request.add_header('Accept-Encoding','deflate')
         request.add_header('Accept','text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8')
         request.add_header('Connection','close')
-        
-        for (k,v) in chl['headers'].items():
-            request.add_header(k,v)
+        request.add_header('Cookie',control_center.ccget("cookie"))
 
         response = urllib2.urlopen(request)
-        self.play_list = json.loads(response.read())["song"]
+        ret = response.read()
+        print ret
+        self.play_list = json.loads(ret)["song"]
     
     def start(self):
+        control_center.ccchange("channel")
         while True:
             try:
                 if len(self.play_list) == 0:
                     self.fetch_playlist()
                 self.cur_song = self.play_list.pop()
+                
+                control_center.ccset("db_cur_song",json.dumps(self.cur_song))
+                
                 print "play ===",self.cur_song
                 write_wait()
                 self.play(self.cur_song["url"])
