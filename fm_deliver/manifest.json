@@ -1,0 +1,17 @@
+{
+  "name": "fm_deliver",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "fm_deliver",
+  "icons": {},
+  "permissions": [
+     "http://radio.miaocc.com/*"
+  ],
+  "content_scripts": [{
+      "js": [
+             "share.js"
+            ],
+      "matches": [ "http://douban.fm/*" ],
+      "run_at": "document_end"
+  }]
+}
