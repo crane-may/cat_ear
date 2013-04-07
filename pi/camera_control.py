@@ -17,12 +17,21 @@ def wait4btn():
 
 def qr_decode():
     write_led_search()
-    os.system("fswebcam -q --no-timestamp --no-banner --greyscale --png 2 /dev/shm/web-cam-shot.png")
-    handle = subprocess.Popen('/home/pi/zbar-0.10/examples/scan_image /dev/shm/web-cam-shot.png', 
+    #os.system("fswebcam -q --no-timestamp --no-banner --greyscale --png 2 /dev/shm/web-cam-shot.png")
+    os.system("cd /dev/shm")
+    os.system("rm -f *.png")
+    os.system("mplayer tv:// -tv driver=v4l2:device=/dev/video0:width=320:height=240:outfmt=rgb24 -frames 3 -vo png:z=1 -framedrop")
+    os.system("ls -S -1 | sed -e '2,$d' -e '/png/a shot.png' | xargs mv")
+    handle = subprocess.Popen('/home/pi/zbar-0.10/examples/scan_image /dev/shm/shot.png', 
                             stdout=subprocess.PIPE, shell=True)
 
     return handle.stdout.read().strip()
 
+def write_led2(s):
+  f = open("/dev/shm/led_camera.buf","wb")
+  f.write(s)
+  f.close()
+  
 def write_wait():
     f = open("/dev/shm/led_nw.buf","wb")
     f.write(chr(0b00000000))
@@ -34,6 +43,7 @@ def write_wait():
     f.write(chr(0b00000010))
     f.write(chr(0b00000000))
     f.close()
+    write_led2("0")
     
 ani = True
 def write_led_search():
@@ -53,6 +63,7 @@ def write_led_search():
     f.write(chr(0b00000000))
     f.close()
     ani = not ani
+    write_led2("1")
     
 def write_success():
     f = open("/dev/shm/led_nw.buf","wb")
@@ -65,6 +76,7 @@ def write_success():
     f.write(chr(0b00000000))
     f.write(chr(0b00000000))
     f.close()
+    write_led2("2")
     
 def wait4decode():
     ret = ""

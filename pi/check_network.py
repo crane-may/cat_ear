@@ -33,7 +33,16 @@ def write_led():
         f.write(chr(0b01000010))
         f.write(chr(0b00000000))
     f.close()
+
+def write_led2():
+  f = open("/dev/shm/led_network.buf","wb")
+  ip = get_ip_address("wlan0")
+  if ip != None :
+    f.write("0")
+  else:
+    f.write("1")
+  f.close()
     
 while True:
-    write_led()
+    write_led2()
     time.sleep(10)
