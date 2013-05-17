@@ -54,8 +54,7 @@ def ccsync():
         
         response = urllib2.urlopen(request,json.dumps(store_set))
         print response.read()
-
-    request = urllib2.Request("http://radio.miaocc.com/devices/get_attr/%s"%get_did())
+    request = urllib2.Request("http://radio.miaocc.com/devices/get_attr/%s?unless=db_cur_song"%get_did())
     request.add_header('User-Agent', 'Mozilla/5.0 (pi)')
     request.add_header('Accept-Encoding','deflate')
     request.add_header('Accept','application/json')
@@ -63,9 +62,9 @@ def ccsync():
     
     response = urllib2.urlopen(request)
     ret = response.read()
-    print ret
+    print "###",ret
     
-    store = json.loads(ret)
+    store.update(json.loads(ret))
 
     
 def ccget(key):
@@ -116,15 +115,22 @@ thread.start_new_thread(controller, ())
 
 def remote_sync():
     while True:
-        time.sleep(5)
+        time.sleep(3)
         ccsync()
-
-def sync_interval():
-  ccsync()
-  thread.start_new_thread(remote_sync, ())
+        
+while True:
+  try:
+    ccsync()
+  except Exception,e:
+    print "====",e
+    time.sleep(3)
+    continue
+  
+  break
+  
+thread.start_new_thread(remote_sync, ())
 
 if __name__ == "__main__" :
-  sync_interval()
   while True:
-		print ccget("channel")
-		time.sleep(1)
+    print ccget("channel")
+    time.sleep(1)
