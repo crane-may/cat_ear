@@ -15,6 +15,32 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+    <style type="text/css" media="screen">
+    table.road-map {
+      width: 100%;
+      font-size: 0.6em;
+      border-spacing: 0;
+      background-color: #444;
+      padding: 1em;
+      border-radius: 0.5em;
+    }
+    .road-map td {
+      border-left: dotted 5px #e7ad52;
+      border-bottom: solid 5px #fff;
+      padding-left: 0.6em;
+      padding-bottom: 0.3em;
+      padding-top: 0;
+      width: 16%;
+    }
+    .road-map-did td{
+      border-left: dotted 0px #e7ad52;
+      border-bottom: solid 0px #fff;
+    }
+    .road-map-did td.done {
+      border-bottom: solid 5px rgb(51, 180, 26);
+      padding: 0.5em 0 0.1em 0.6em;
+    }
+    </style>
 	</head>
 <body>
 <div class="reveal"><div class="slides">
@@ -28,11 +54,8 @@
 
 <section>
   <section>
+    <h2><strong>It's demo time!</strong></h2>
     <img src="images/demo.jpg">
-  </section>
-  
-  <section>
-    <h1>It's demo time!</h1>
   </section>
   
   <section>
@@ -62,16 +85,308 @@
   <section>
     <h2>拆开看看</h2>
   </section>
-  
   <section><img src="images/cat_ear_1.jpg"></section>
   <section><img src="images/cat_ear_2.jpg"></section>
   <section><img src="images/cat_ear_3.jpg"></section>
   <section><img src="images/cat_ear_4.jpg"></section>
   <section><img src="images/cat_ear_5.jpg"></section>
   <section><img src="images/cat_ear_all.jpg"></section>
+  <section><img src="images/modules.jpg"></section>
+  
+  <section>
+    <img src="images/software_modules.jpg">
+    <p>控制端的实现方案</p>
+  </section>
 </section>
 
 <section>
+  <section>
+    <h2>猫耳朵诞生记（前传）</h2>
+  </section>
+  
+  <section>
+    <h3>先介绍一下作者们</h3>
+    <img src="images/team.jpg">
+  </section>
+  
+  <section>
+    <h3>刘阳</h3>
+    <ul>
+      <li>北航计算机专业</li>
+      <li>目前从事互联网创业</li>
+    </ul>
+    <br><br>
+    <h3>师雪坤</h3>
+    <ul>
+      <li>浙大应用数学专业</li>
+      <li>目前从事互联网创业</li>
+    </ul>
+    <br><br>
+    <h3>贺莹</h3>
+    <ul>
+      <li>北航计算机专业</li>
+      <li>腾讯公司交互设计师</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h2>日常的工作</h2>
+    <img src="images/web_tools.jpg">
+  </section>
+  
+  <section>
+    <img src="images/three_idiots.jpg">
+    <p>看了这个电影，从此走上了一条不归路</p>
+  </section>
+  
+  <section>
+    <img src="images/three-idiots-quadrotor.jpg">
+    <p>四轴飞行器 (Quadrotor)</p>
+  </section>
+  
+  <section>
+    <img src="images/myquadrotor.jpg">
+    <p>我的四轴，作为走向“创客”的第一个项目</p>
+  </section>
+  
+  <section>
+    <h3>于是乎，第二个项目也应运而生</h3>
+    <img src="images/douban_fm_account.gif">
+  </section>
+  
+  <section>
+    <h3>为什么叫“猫耳朵”</h3>
+    <img src="images/quadrotor_cat.jpg">
+    <p>受荷兰的“艺术家”扬森.巴特的作品启发</p>
+    <p>我们也热爱喵星人</p>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>猫耳朵诞生记（正传）</h2>
+  </section>
+  
+  <section>
+    <h3>三次元的豆瓣FM</h3>
+    <h3>就应该保留豆瓣的血统</h3>
+    <ul>
+      <li>无线接入无束缚</li>
+      <li>即插即听</li>
+      <li>可远程操控</li>
+      <li>音质尽量好</li>
+      <li>长的不能太挫</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>如何设置无线密码？</h3>
+    <ul>
+      <li class="fragment highlight-red">虚拟键盘</li>
+      <li class="fragment highlight-red">连接电脑配置</li>
+      <li class="fragment highlight-red">登录无线热点</li>
+      <li class="fragment highlight-red">其他通信方式，比如蓝牙</li>
+      <li class="fragment highlight-green">二维码识别</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>Road Map</h3><br>
+    <table class="road-map"><tr><td>WIFI</td><td>播放声音</td><td>播放MP3</td><td>摄像头</td><td>二维码识别</td><td>产品化</td></tr></table>
+  </section>
+  
+  <section>
+    <h3>猫耳朵Ⅰ</h3>
+  </section>
+  
+  <section>
+    <h3>选择开发板</h3>
+    <img src="images/arduinoMega2560.jpg">
+    <p>Arduino Mega 2560</p>
+    <ul>
+      <li>MCU : ATMEGA2560 (Atmel AVR) 16MHz 16bit</li>
+      <li>flash memory : 256 KB</li>
+      <li>SRAM : 8 KB</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>选择WIFI模块</h3>
+    <img src="images/gainspan.jpg">
+    <p>GainSpan GS1010</p>
+    <ul>
+      <li>完整的网络协议栈</li>
+      <li>串口连接</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>选择MP3模块</h3>
+    <img src="images/vs1003.jpg">
+    <p>VS1003</p>
+    <ul>
+      <li>支持多种音频格式解码 (MP3, WMA ...)</li>
+      <li>SPI数据接口</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>猫耳朵Ⅰ合体</h3>
+    <img src="images/cat_ear_i.jpg">
+  </section>
+  
+  <section>
+    <h3>串口速率限制</h3>
+    <p>Arduino Mega 2560串口最高波特率115,200</p>
+    <p>理论上只能支持115kbps的音频</p>
+    <br>
+    <table class="road-map">
+      <tr><td>WIFI</td><td>播放声音</td><td>播放MP3</td><td>摄像头</td><td>二维码识别</td><td>产品化</td></tr>
+      <tr class="road-map-did"><td class="done">猫耳朵Ⅰ</td><td class="done"></td><td></td><td></td><td></td><td></td><tr>
+    </table>
+  </section>
+  
+  <section>
+    <h3>猫耳朵Ⅱ</h3>
+    <h4>换板子！</h4>
+    <img src="images/maple.jpg">
+    <p>Arduino Mega 2560</p>
+    <ul>
+      <li>MCU : STM32F103RB (ARM Cortex M3) 72MHz 32bit</li>
+      <li>flash memory : 128KB</li>
+      <li>SRAM : 20KB</li>
+      <li>串口最高波特率 : 2,250,000</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>摄像头</h3>
+    <img src="images/ov7670.jpg">
+    <p>比较其他模块，这个最复杂</p>
+  </section>
+  
+  <section>
+    <h3>加个SD卡作为MP3流的Cache</h3>
+    <img src="images/sd.jpg">
+  </section>
+  
+  <section>
+    <h3>猫耳朵Ⅱ合体</h3>
+    <img src="images/cat_ear_ii.jpg">
+  </section>
+  
+  <section>
+    <h3>内存限制</h3>
+    <p>20KB内存无法驾驭二维码识别</p>
+    <br>
+    <table class="road-map">
+      <tr><td>WIFI</td><td>播放声音</td><td>播放MP3</td><td>摄像头</td><td>二维码识别</td><td>产品化</td></tr>
+      <tr class="road-map-did"><td class="done">猫耳朵Ⅰ</td><td class="done"></td><td></td><td></td><td></td><td></td><tr>
+      <tr class="road-map-did"><td class="done">猫耳朵Ⅱ</td><td class="done"></td><td class="done"></td><td class="done"></td><td></td><td></td><tr>
+    </table>
+  </section>
+  
+  <section>
+    <h3>猫耳朵Ⅲ</h3>
+    <h4>继续换板子！</h4>
+    <img src="images/stmf4.jpg">
+    <p>STM32F4 DISCOVERY</p>
+    <ul>
+      <li>MCU : STM32F407VGT6 (ARM Cortex M4) 168MHz 32bit</li>
+      <li>flash memory : 1024KB</li>
+      <li>RAM : 192KB</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>猫耳朵Ⅲ合体</h3>
+    <img src="images/cat_ear_iii.jpg">
+  </section>
+  
+  <section>
+    <h3>应用编写麻烦</h3>
+    <p>需要从TCP层写起，不如先换个思路</p>
+    <br>
+    <table class="road-map">
+      <tr><td>WIFI</td><td>播放声音</td><td>播放MP3</td><td>摄像头</td><td>二维码识别</td><td>产品化</td></tr>
+      <tr class="road-map-did"><td class="done">猫耳朵Ⅰ</td><td class="done"></td><td></td><td></td><td></td><td></td><tr>
+      <tr class="road-map-did"><td class="done">猫耳朵Ⅱ</td><td class="done"></td><td class="done"></td><td class="done"></td><td></td><td></td><tr>
+      <tr class="road-map-did"><td class="done">猫耳朵Ⅲ</td><td class="done"></td><td class="done"></td><td class="done"></td><td class="done"></td><td></td><tr>
+    </table>
+  </section>
+  
+  <section>
+    <h3>猫耳朵Ⅳ</h3>
+    <h4>还是换板子！</h4>
+    <img src="images/raspberry_pi.jpg">
+    <p>Raspberry Pi 树莓派</p>
+    <ul>
+      <li>CPU : BCM2835 (ARM11) 700MHz 32bit</li>
+      <li>RAM : 512MB</li>
+      <li>OS : Arch Linux</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>下来就是外观</h3>
+    <p>受到emoi基本生活的LED电子钟启发</p>
+    <img src="images/emoi.jpg">
+  </section>
+  
+  <section>
+    <h3>我们是木工</h3>
+    <img src="images/shell.jpg">
+  </section>
+  
+  <section>
+    <h3>胜利</h3>
+    <br>
+    <table class="road-map">
+      <tr><td>WIFI</td><td>播放声音</td><td>播放MP3</td><td>摄像头</td><td>二维码识别</td><td>产品化</td></tr>
+      <tr class="road-map-did"><td class="done">猫耳朵Ⅰ</td><td class="done"></td><td></td><td></td><td></td><td></td><tr>
+      <tr class="road-map-did"><td class="done">猫耳朵Ⅱ</td><td class="done"></td><td class="done"></td><td class="done"></td><td></td><td></td><tr>
+      <tr class="road-map-did"><td class="done">猫耳朵Ⅲ</td><td class="done"></td><td class="done"></td><td class="done"></td><td class="done"></td><td></td><tr>
+      <tr class="road-map-did"><td class="done">猫耳朵Ⅳ</td><td class="done"></td><td class="done"></td><td class="done"></td><td class="done"></td><td class="done"></td><tr>
+    </table>
+    <br>
+    <h4>也许过程比结果更重要</h4>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>猫不应该只有耳朵的</h2>
+    <h3>未来畅想，仅供“娱乐”</h3>
+  </section>
+  
+  <section>
+    <h3>其实猫耳朵可以看成豆瓣FM的一个应用（端）</h3>
+    <img src="images/terminals.jpg">
+  </section>
+  
+  <section>
+    <h3>把豆瓣FM的外延扩大</h3>
+    <h4>一切音频的内容和应用都可囊括</h4>
+    <ul>
+      <li>根据喜好的音乐推荐（目前的豆瓣FM）</li>
+      <li>新闻推荐</li>
+      <li>事件提醒与朗读</li>
+      <li>个人电台（类似Podcast）</li>
+      <li>...</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>个人音频云</h3>
+    <img src="images/cloud.gif">
+  </section>
+  
+  <section>
+    <h3>幻想完了，也分享完了</h3>
+    <br>
+    <h1>感谢大家</h1>    
+    <h3>欢迎大家提任何问题</h3>
+  </section>
 </section>
 
 <!-- ===================================================================== -->
@@ -79,8 +394,6 @@
 <script src="lib/js/head.min.js"></script>
 <script src="js/reveal.min.js"></script>
 <script>
-  // Full list of configuration options available here:
-  // https://github.com/hakimel/reveal.js#configuration
   Reveal.initialize({
     controls: true,
     progress: true,
