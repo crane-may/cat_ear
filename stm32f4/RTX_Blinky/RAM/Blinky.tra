@@ -1,0 +1,78 @@
+*** Creating Trace Output File '.\RAM\Blinky.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\ram\misc.o"'
+### List of Objects: adding '".\ram\stm32f4xx_adc.o"'
+### List of Objects: adding '".\ram\stm32f4xx_can.o"'
+### List of Objects: adding '".\ram\stm32f4xx_crc.o"'
+### List of Objects: adding '".\ram\stm32f4xx_cryp.o"'
+### List of Objects: adding '".\ram\stm32f4xx_cryp_aes.o"'
+### List of Objects: adding '".\ram\stm32f4xx_cryp_des.o"'
+### List of Objects: adding '".\ram\stm32f4xx_cryp_tdes.o"'
+### List of Objects: adding '".\ram\stm32f4xx_dac.o"'
+### List of Objects: adding '".\ram\stm32f4xx_dbgmcu.o"'
+### List of Objects: adding '".\ram\stm32f4xx_dcmi.o"'
+### List of Objects: adding '".\ram\stm32f4xx_dma.o"'
+### List of Objects: adding '".\ram\stm32f4xx_exti.o"'
+### List of Objects: adding '".\ram\stm32f4xx_flash.o"'
+### List of Objects: adding '".\ram\stm32f4xx_fsmc.o"'
+### List of Objects: adding '".\ram\stm32f4xx_gpio.o"'
+### List of Objects: adding '".\ram\stm32f4xx_hash.o"'
+### List of Objects: adding '".\ram\stm32f4xx_hash_md5.o"'
+### List of Objects: adding '".\ram\stm32f4xx_hash_sha1.o"'
+### List of Objects: adding '".\ram\stm32f4xx_i2c.o"'
+### List of Objects: adding '".\ram\stm32f4xx_iwdg.o"'
+### List of Objects: adding '".\ram\stm32f4xx_pwr.o"'
+### List of Objects: adding '".\ram\stm32f4xx_rcc.o"'
+### List of Objects: adding '".\ram\stm32f4xx_rng.o"'
+### List of Objects: adding '".\ram\stm32f4xx_rtc.o"'
+### List of Objects: adding '".\ram\stm32f4xx_sdio.o"'
+### List of Objects: adding '".\ram\stm32f4xx_spi.o"'
+### List of Objects: adding '".\ram\stm32f4xx_syscfg.o"'
+### List of Objects: adding '".\ram\stm32f4xx_tim.o"'
+### List of Objects: adding '".\ram\stm32f4xx_usart.o"'
+### List of Objects: adding '".\ram\stm32f4xx_wwdg.o"'
+### List of Objects: adding '".\ram\startup_stm32f4xx.o"'
+### List of Objects: adding '".\ram\system_stm32f4xx.o"'
+### List of Objects: adding '".\ram\main.o"'
+### List of Objects: adding '".\ram\console_usart.o"'
+### List of Objects: adding '".\ram\camera.o"'
+### List of Objects: adding '".\ram\i2c.o"'
+### List of Objects: adding '".\ram\sd.o"'
+### List of Objects: adding '".\ram\config.o"'
+### List of Objects: adding '".\ram\decoder.o"'
+### List of Objects: adding '".\ram\error.o"'
+### List of Objects: adding '".\ram\image.o"'
+### List of Objects: adding '".\ram\refcnt.o"'
+### List of Objects: adding '".\ram\scanner.o"'
+### List of Objects: adding '".\ram\svg.o"'
+### List of Objects: adding '".\ram\symbol.o"'
+### List of Objects: adding '".\ram\bch15_5.o"'
+### List of Objects: adding '".\ram\binarize.o"'
+### List of Objects: adding '".\ram\isaac.o"'
+### List of Objects: adding '".\ram\qrdec.o"'
+### List of Objects: adding '".\ram\qrdectxt.o"'
+### List of Objects: adding '".\ram\rs.o"'
+### List of Objects: adding '".\ram\util.o"'
+### List of Objects: adding '".\ram\code39.o"'
+### List of Objects: adding '".\ram\code128.o"'
+### List of Objects: adding '".\ram\ean.o"'
+### List of Objects: adding '".\ram\i25.o"'
+### List of Objects: adding '".\ram\qr_finder.o"'
+### List of Objects: adding '".\ram\img_scanner.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M4.fp ".\ram\misc.o" ".\ram\stm32f4xx_adc.o" ".\ram\stm32f4xx_can.o" ".\ram\stm32f4xx_crc.o" ".\ram\stm32f4xx_cryp.o" ".\ram\stm32f4xx_cryp_aes.o" ".\ram\stm32f4xx_cryp_des.o" ".\ram\stm32f4xx_cryp_tdes.o" ".\ram\stm32f4xx_dac.o" ".\ram\stm32f4xx_dbgmcu.o" ".\ram\stm32f4xx_dcmi.o" ".\ram\stm32f4xx_dma.o" ".\ram\stm32f4xx_exti.o" ".\ram\stm32f4xx_flash.o" ".\ram\stm32f4xx_fsmc.o" ".\ram\stm32f4xx_gpio.o" ".\ram\stm32f4xx_hash.o" ".\ram\stm32f4xx_hash_md5.o" ".\ram\stm32f4xx_hash_sha1.o" ".\ram\stm32f4xx_i2c.o" ".\ram\stm32f4xx_iwdg.o" ".\ram\stm32f4xx_pwr.o" ".\ram\stm32f4xx_rcc.o" ".\ram\stm32f4xx_rng.o" ".\ram\stm32f4xx_rtc.o" ".\ram\stm32f4xx_sdio.o" ".\ram\stm32f4xx_spi.o" ".\ram\stm32f4xx_syscfg.o" ".\ram\stm32f4xx_tim.o" ".\ram\stm32f4xx_usart.o" ".\ram\stm32f4xx_wwdg.o" ".\ram\startup_stm32f4xx.o" ".\ram\system_stm32f4xx.o" ".\ram\main.o" ".\ram\console_usart.o" ".\ram\camera.o" ".\ram\i2c.o" ".\ram\sd.o" ".\ram\config.o" ".\ram\decoder.o" ".\ram\error.o" ".\ram\image.o" ".\ram\refcnt.o" ".\ram\scanner.o" ".\ram\svg.o" ".\ram\symbol.o" ".\ram\bch15_5.o" ".\ram\binarize.o" ".\ram\isaac.o" ".\ram\qrdec.o" ".\ram\qrdectxt.o" ".\ram\rs.o" ".\ram\util.o" ".\ram\code39.o" ".\ram\code128.o" ".\ram\ean.o" ".\ram\i25.o" ".\ram\qr_finder.o" ".\ram\img_scanner.o" 
+C:\Keil\ARM\RV31\LIB\RTX_CM4.LIB --strict --scatter ".\RAM\Blinky.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\RAM\Blinky.map" -o .\RAM\Blinky.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\RAM\Blinky.axf'
+### ADS-LD Command File: '.\RAM\Blinky.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\RAM\Blinky.lnp', Handle=0x000004E0
+### Writing '.lnp' file
+### ADS-LD Command file '.\RAM\Blinky.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 2 errors
+### Updating obj list
+### LDADS_file() completed.

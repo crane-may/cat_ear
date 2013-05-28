@@ -1,0 +1,1 @@
+gcc -o scan -I . config.c decoder/code128.c decoder/i25.c error.c qrcode/bch15_5.c qrcode/qrdec.c qrcode/util.c scanner.c decoder/code39.c image.c qrcode/binarize.c qrcode/qrdectxt.c symbol.c decoder.c decoder/ean.c decoder/qr_finder.c img_scanner.c qrcode/isaac.c qrcode/rs.c scan_image.c svg.c refcnt.c

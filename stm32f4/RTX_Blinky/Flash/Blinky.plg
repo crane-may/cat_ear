@@ -1,0 +1,15 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\crane\Desktop\RTX_Blinky\Blinky.uvproj
+Project File Date:  12/16/2012
+
+<h2>Output:</h2>
+Clean started: Project: 'Blinky'
+   deleting intermediate output files for target 'STM32F407 Flash'
+   deleting intermediate output files for target 'STM32F407 RAM'
+Clean started: Project: 'Blinky'
+   deleting intermediate output files for target 'STM32F407 Flash'
+   deleting intermediate output files for target 'STM32F407 RAM'

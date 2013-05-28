@@ -1,0 +1,10 @@
+.\RAM\blinky.o: Blinky.c
+.\RAM\blinky.o: C:\Keil\ARM\RV31\INC\RTL.h
+.\RAM\blinky.o: C:\Keil\ARM\Inc\ST\STM32F4xx\stm32f4xx.h
+.\RAM\blinky.o: C:\Keil\ARM\CMSIS\Include\core_cm4.h
+.\RAM\blinky.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\RAM\blinky.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\RAM\blinky.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\RAM\blinky.o: C:\Keil\ARM\CMSIS\Include\core_cm4_simd.h
+.\RAM\blinky.o: C:\Keil\ARM\Inc\ST\STM32F4xx\system_stm32f4xx.h
+.\RAM\blinky.o: LED.h
